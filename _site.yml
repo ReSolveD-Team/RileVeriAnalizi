@@ -9,6 +9,6 @@ navbar:
       href: index.html
     - text: "Dersler"
       href: dersler.html
-    - text: "Hakkımızda"
+    - text: "Hakkında"
       href: about.html
 output: distill::distill_article
