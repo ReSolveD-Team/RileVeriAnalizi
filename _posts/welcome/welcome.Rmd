@@ -1,13 +1,7 @@
 ---
-title: "Welcome to R ile Veri Analizi Atölyesi"
+title: "Kurulumlar ve Giriş"
 description: |
-  Welcome to our new blog, R ile Veri Analizi Atölyesi. We hope you enjoy 
-  reading what we have to say!
-author:
-  - name: Nora Jones 
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
+  R ile veri analizi için giriş dersi
 date: 04-29-2022
 output:
   distill::distill_article:
@@ -16,11 +10,17 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+library("vembedr")
 
 # Learn more about creating blogs with Distill at:
 # https://rstudio.github.io/distill/blog.html
 
 ```
 
+Aşağıdaki videoda kurulum için gerekli bilgileri bulabilirsiniz. Aynı adınları Mac için de takip ettiğinizde sorun olmayacağını düşünüyoruz. Karşılaştığınız sorunları grup üzerinden direk bize iletebilirsiniz.
 
+
+```{r}
+embed_url("https://www.youtube.com/watch?v=2hz2gpMNAeQ")
+```
 
