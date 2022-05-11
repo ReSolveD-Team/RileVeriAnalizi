@@ -8,28 +8,9 @@ description: |
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-about
-
-about
-
-aboutaboutaboutabout
-about
-about
-about
-about
-about
-about
-aboutaboutaboutabout
-about
-
-aboutaboutaboutabout
-about
-about
-about
-about
-
-```{r}
-hist(Nile)
-```
+digitalottomanstudies.com tarafından düzenlenen R ile Veri Analizi Atolyesi için hazırlanmıştır.
 
 
+Arif Yasin Kavdır
+&
+Yusuf Akbulut
