@@ -106,7 +106,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site"]}},"value":[{"type":"character","attributes":{},"value":["R ile Veri Analizi Atölyesi"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","output","editor_options"]}},"value":[{"type":"character","attributes":{},"value":["R ile Veri Analizi Atölyesi"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_float","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[5]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["markdown"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["wrap"]}},"value":[{"type":"integer","attributes":{},"value":[72]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2086,7 +2086,156 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 <div class="d-article">
-<p>Buraya genel şeyler konulacak</p>
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#ders-içeriği" id="toc-ders-içeriği">Ders İçeriği</a>
+<ul>
+<li><a href="#hafta" id="toc-hafta">1.Hafta</a>
+<ul>
+<li><a href="#mayıs-çarşamba-20.00-22.00"
+id="toc-mayıs-çarşamba-20.00-22.00">11 Mayıs Çarşamba : 20.00-22.00</a>
+<ul>
+<li><a href="#programlamaya-giriş-ve-r"
+id="toc-programlamaya-giriş-ve-r">Programlamaya Giriş ve R</a></li>
+</ul></li>
+<li><a href="#mayıs-cumartesi-14.00-16.00"
+id="toc-mayıs-cumartesi-14.00-16.00">14 Mayıs Cumartesi: 14.00-16.00</a>
+<ul>
+<li><a href="#veri-yapıları-ve-döngüler"
+id="toc-veri-yapıları-ve-döngüler">Veri Yapıları ve Döngüler</a></li>
+</ul></li>
+<li><a href="#mayıs-pazar-14.00-16.00"
+id="toc-mayıs-pazar-14.00-16.00">15 Mayıs Pazar : 14.00-16.00</a>
+<ul>
+<li><a href="#dplyr-paketi-ve-döngüler"
+id="toc-dplyr-paketi-ve-döngüler">Dplyr Paketi ve Döngüler</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#hafta-1" id="toc-hafta-1">2. Hafta</a>
+<ul>
+<li><a href="#mayıs-çarşamba-19.00-21.00"
+id="toc-mayıs-çarşamba-19.00-21.00">18 Mayıs Çarşamba : 19.00-21.00</a>
+<ul>
+<li><a href="#dplyr-paketi-ile-veri-temizliği"
+id="toc-dplyr-paketi-ile-veri-temizliği">Dplyr Paketi ile Veri
+Temizliği</a></li>
+</ul></li>
+<li><a href="#mayıs-cuma-19.00-21.00" id="toc-mayıs-cuma-19.00-21.00">20
+Mayıs Cuma : 19.00-21.00</a>
+<ul>
+<li><a href="#ggplot-paketi-ile-görselleştirme"
+id="toc-ggplot-paketi-ile-görselleştirme">Ggplot Paketi ile
+Görselleştirme</a></li>
+<li><a href="#ödev-3" id="toc-ödev-3">Ödev</a></li>
+</ul></li>
+<li><a href="#mayıs-cumartesi-14.00-17.00"
+id="toc-mayıs-cumartesi-14.00-17.00">21 Mayıs Cumartesi :
+14.00-17.00</a>
+<ul>
+<li><a href="#tarih-saat-ve-mekan-verisi"
+id="toc-tarih-saat-ve-mekan-verisi">Tarih, saat ve mekan verisi</a></li>
+<li><a href="#ödev-4" id="toc-ödev-4">Ödev</a></li>
+</ul></li>
+<li><a href="#mayıs-pazar-14.00-17.00"
+id="toc-mayıs-pazar-14.00-17.00">22 Mayıs Pazar : 14.00-17.00</a>
+<ul>
+<li><a href="#regex-ve-stringr-paketi-ile-metin-işleme"
+id="toc-regex-ve-stringr-paketi-ile-metin-işleme">Regex ve StringR
+Paketi ile Metin İşleme</a></li>
+<li><a href="#ödev-5" id="toc-ödev-5">Ödev</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+</div>
+<h1 id="ders-içeriği">Ders İçeriği</h1>
+<h2 id="hafta">1.Hafta</h2>
+<h3 id="mayıs-çarşamba-20.00-22.00">11 Mayıs Çarşamba : 20.00-22.00</h3>
+<h4 id="programlamaya-giriş-ve-r">Programlamaya Giriş ve R</h4>
+<ul>
+<li><p>Programlama dilleri ve mantığı</p></li>
+<li><p>Arayüz vs. Kod</p></li>
+<li><p>Neden R</p></li>
+<li><p>R vs. Python</p></li>
+<li><p>Rstudio kullanımı</p></li>
+<li><p>Rmarkdown</p></li>
+<li><p>Kütüphane kullanımı</p></li>
+<li><p>Kaggle tanıtımı</p>
+<h4 id="ödev">Ödev:</h4></li>
+<li><p><em>Kurulumların kişisel bilgisayarlarda
+tamamlanması</em></p></li>
+<li><p><em>Kaggle’dan ya da farklı kaynaklardan ders boyu kullanılacak
+verinin seçilip onaylatılması</em></p></li>
+</ul>
+<h3 id="mayıs-cumartesi-14.00-16.00">14 Mayıs Cumartesi:
+14.00-16.00</h3>
+<h4 id="veri-yapıları-ve-döngüler">Veri Yapıları ve Döngüler</h4>
+<ul>
+<li><p>Veri yapıları</p></li>
+<li><p>Değişken ve opertörler</p></li>
+<li><p>Vektör, Liste ve DataFrame</p></li>
+<li><p>Veri alt kümelerine ulaşım</p></li>
+<li><p>%&gt;%</p></li>
+<li><p>Veri okuma ve yazma</p>
+<h4 id="ödev-1">Ödev:</h4></li>
+<li><p><em>Kendi veriniz üzerinden derste gösterilen fonsksiyonların
+uygulaması</em></p></li>
+</ul>
+<h3 id="mayıs-pazar-14.00-16.00">15 Mayıs Pazar : 14.00-16.00</h3>
+<h4 id="dplyr-paketi-ve-döngüler">Dplyr Paketi ve Döngüler</h4>
+<ul>
+<li><p>For döngüsü</p></li>
+<li><p>While döngüsü</p></li>
+<li><p>Fonksiyonlar</p></li>
+<li><p>select fonksiyonu</p></li>
+<li><p>filter fonksiyonu</p></li>
+<li><p>arange fonksiyonu</p></li>
+</ul>
+<h2 id="hafta-1">2. Hafta</h2>
+<h3 id="mayıs-çarşamba-19.00-21.00">18 Mayıs Çarşamba : 19.00-21.00</h3>
+<h4 id="dplyr-paketi-ile-veri-temizliği">Dplyr Paketi ile Veri
+Temizliği</h4>
+<ul>
+<li><p>mutate fonksiyonu</p></li>
+<li><p>summarize fonksiyonu</p></li>
+<li><p>count fonksiyonu</p></li>
+<li><p>case_when fonksiyonu</p></li>
+<li><p>pivot_longer fonksiyonu</p></li>
+<li><p>pivot_wider fonksiyonu</p>
+<h4 id="ödev-2">Ödev:</h4></li>
+<li><p><em>Kendi veriniz üzerinden derste gösterilen fonsksiyonların
+uygulaması</em></p></li>
+</ul>
+<h3 id="mayıs-cuma-19.00-21.00">20 Mayıs Cuma : 19.00-21.00</h3>
+<h4 id="ggplot-paketi-ile-görselleştirme">Ggplot Paketi ile
+Görselleştirme</h4>
+<ul>
+<li><p>Grafik grameri</p></li>
+<li><p>Veri tipi görselleştirme ilişkisi</p></li>
+<li><p>Çeşitli görselleştirme türleri</p></li>
+<li><p>Grafik özelleştirme</p></li>
+</ul>
+<h4 id="ödev-3">Ödev</h4>
+<h3 id="mayıs-cumartesi-14.00-17.00">21 Mayıs Cumartesi :
+14.00-17.00</h3>
+<h4 id="tarih-saat-ve-mekan-verisi">Tarih, saat ve mekan verisi</h4>
+<ul>
+<li><p>Lubridate paketi</p></li>
+<li><p>Leaflet paketi</p></li>
+</ul>
+<h4 id="ödev-4">Ödev</h4>
+<h3 id="mayıs-pazar-14.00-17.00">22 Mayıs Pazar : 14.00-17.00</h3>
+<h4 id="regex-ve-stringr-paketi-ile-metin-işleme">Regex ve StringR
+Paketi ile Metin İşleme</h4>
+<ul>
+<li><p>Regex</p></li>
+<li><p>StringR ile metin işleme</p></li>
+<li><p>Temel metin analizi fonsksiyonları</p></li>
+</ul>
+<h4 id="ödev-5">Ödev</h4>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->

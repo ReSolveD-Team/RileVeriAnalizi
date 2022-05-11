@@ -1,7 +1,139 @@
 ---
 title: "R ile Veri Analizi Atölyesi"
 site: distill::distill_website
+output:
+  distill::distill_article:
+    toc: true
+    toc_float: true
+    toc_depth: 5
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
+# Ders İçeriği
 
-Buraya genel şeyler konulacak
+## 1.Hafta
+
+### 11 Mayıs Çarşamba : 20.00-22.00
+
+#### Programlamaya Giriş ve R
+
+-   Programlama dilleri ve mantığı
+
+-   Arayüz vs. Kod
+
+-   Neden R
+
+-   R vs. Python
+
+-   Rstudio kullanımı
+
+-   Rmarkdown
+
+-   Kütüphane kullanımı
+
+-   Kaggle tanıtımı
+
+    #### Ödev:
+
+-   *Kurulumların kişisel bilgisayarlarda tamamlanması*
+
+-   *Kaggle'dan ya da farklı kaynaklardan ders boyu kullanılacak verinin
+    seçilip onaylatılması*
+
+### 14 Mayıs Cumartesi: 14.00-16.00
+
+#### Veri Yapıları ve Döngüler
+
+-   Veri yapıları
+
+-   Değişken ve opertörler
+
+-   Vektör, Liste ve DataFrame
+
+-   Veri alt kümelerine ulaşım
+
+-   %\>%
+
+-   Veri okuma ve yazma
+
+    #### Ödev:
+
+-   *Kendi veriniz üzerinden derste gösterilen fonsksiyonların
+    uygulaması*
+
+### 15 Mayıs Pazar : 14.00-16.00
+
+#### Dplyr Paketi ve Döngüler
+
+-   For döngüsü
+
+-   While döngüsü
+
+-   Fonksiyonlar
+
+-   select fonksiyonu
+
+-   filter fonksiyonu
+
+-   arange fonksiyonu
+
+## 2. Hafta 
+
+### 18 Mayıs Çarşamba : 19.00-21.00 
+
+#### Dplyr Paketi ile Veri Temizliği
+
+-   mutate fonksiyonu
+
+-   summarize fonksiyonu
+
+-   count fonksiyonu
+
+-   case_when fonksiyonu
+
+-   pivot_longer fonksiyonu
+
+-   pivot_wider fonksiyonu
+
+    #### Ödev:
+
+-   *Kendi veriniz üzerinden derste gösterilen fonsksiyonların
+    uygulaması*
+
+### 20 Mayıs Cuma : 19.00-21.00 
+
+#### Ggplot Paketi ile Görselleştirme
+
+-   Grafik grameri
+
+-   Veri tipi görselleştirme ilişkisi
+
+-   Çeşitli görselleştirme türleri
+
+-   Grafik özelleştirme
+
+#### Ödev
+
+### 21 Mayıs Cumartesi : 14.00-17.00 
+
+#### Tarih, saat ve mekan verisi
+
+-   Lubridate paketi
+
+-   Leaflet paketi
+
+#### Ödev
+
+### 22 Mayıs Pazar : 14.00-17.00
+
+#### Regex ve StringR Paketi ile Metin İşleme
+
+-   Regex
+
+-   StringR ile metin işleme
+
+-   Temel metin analizi fonsksiyonları
+
+#### Ödev
