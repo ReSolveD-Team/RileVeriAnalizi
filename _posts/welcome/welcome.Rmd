@@ -2,7 +2,7 @@
 title: "Kurulumlar ve Giriş"
 description: |
   R ile veri analizi için giriş dersi
-date: 04-29-2022
+date: 05-11-2022
 output:
   distill::distill_article:
     self_contained: false

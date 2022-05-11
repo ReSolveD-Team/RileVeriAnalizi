@@ -13,11 +13,13 @@ editor_options:
 
 # Ders İçeriği
 
+Ders Kaynağı: <https://r4ds.had.co.nz/>
+
 ## 1.Hafta
 
-### 11 Mayıs Çarşamba : 20.00-22.00
+### Programlamaya Giriş ve R
 
-#### Programlamaya Giriş ve R
+**11 Mayıs Çarşamba : 20.00-22.00**
 
 -   Programlama dilleri ve mantığı
 
@@ -35,16 +37,16 @@ editor_options:
 
 -   Kaggle tanıtımı
 
-    #### Ödev:
+    **Ödev:**
 
 -   *Kurulumların kişisel bilgisayarlarda tamamlanması*
 
 -   *Kaggle'dan ya da farklı kaynaklardan ders boyu kullanılacak verinin
     seçilip onaylatılması*
 
-### 14 Mayıs Cumartesi: 14.00-16.00
+### Veri Yapıları ve Döngüler
 
-#### Veri Yapıları ve Döngüler
+**14 Mayıs Cumartesi: 14.00-16.00**
 
 -   Veri yapıları
 
@@ -58,14 +60,14 @@ editor_options:
 
 -   Veri okuma ve yazma
 
-    #### Ödev:
+    **Ödev:**
 
 -   *Kendi veriniz üzerinden derste gösterilen fonsksiyonların
     uygulaması*
 
-### 15 Mayıs Pazar : 14.00-16.00
+### Dplyr Paketi ve Döngüler
 
-#### Dplyr Paketi ve Döngüler
+**15 Mayıs Pazar : 14.00-16.00**
 
 -   For döngüsü
 
@@ -79,11 +81,16 @@ editor_options:
 
 -   arange fonksiyonu
 
-## 2. Hafta 
+    **Ödev:**
 
-### 18 Mayıs Çarşamba : 19.00-21.00 
+-   *Kendi veriniz üzerinden derste gösterilen fonsksiyonların
+    uygulaması*
 
-#### Dplyr Paketi ile Veri Temizliği
+## 2. Hafta
+
+### Dplyr Paketi ile Veri Temizliği
+
+**18 Mayıs Çarşamba : 19.00-21.00**
 
 -   mutate fonksiyonu
 
@@ -97,14 +104,14 @@ editor_options:
 
 -   pivot_wider fonksiyonu
 
-    #### Ödev:
+    **Ödev:**
 
 -   *Kendi veriniz üzerinden derste gösterilen fonsksiyonların
     uygulaması*
 
-### 20 Mayıs Cuma : 19.00-21.00 
+### Ggplot Paketi ile Görselleştirme
 
-#### Ggplot Paketi ile Görselleştirme
+**20 Mayıs Cuma : 19.00-21.00**
 
 -   Grafik grameri
 
@@ -114,21 +121,26 @@ editor_options:
 
 -   Grafik özelleştirme
 
-#### Ödev
+**Ödev**
 
-### 21 Mayıs Cumartesi : 14.00-17.00 
+-   *Kendi veriniz üzerinden 2 farklı görselleştirme* yapılması
 
-#### Tarih, saat ve mekan verisi
+### Tarih, saat ve mekan verisi
+
+**21 Mayıs Cumartesi : 14.00-17.00**
 
 -   Lubridate paketi
 
 -   Leaflet paketi
 
-#### Ödev
+**Ödev**
 
-### 22 Mayıs Pazar : 14.00-17.00
+-   *Kendi verinizi kullanarak paketlerden en az birini kullanarak bir
+    analiz ya da görselleştirme yapılması*
 
-#### Regex ve StringR Paketi ile Metin İşleme
+### Regex ve StringR Paketi ile Metin İşleme
+
+**22 Mayıs Pazar : 14.00-17.00**
 
 -   Regex
 
@@ -136,4 +148,12 @@ editor_options:
 
 -   Temel metin analizi fonsksiyonları
 
-#### Ödev
+**Ödev**
+
+-   *Kendi verinizi kullanarak paketlerden en az birini kullanarak bir
+    analiz yapılması*
+
+**Bitirme Ödevi**
+
+Seçilen veri üzerinden bir araştırma sorusu ile kısa bir blog yazısının
+yazılması
