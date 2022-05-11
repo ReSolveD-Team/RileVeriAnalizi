@@ -1,0 +1,36 @@
+[
+  {
+    "path": "posts/the-sharpe-ratio/",
+    "title": "Welcome to R ile Veri Analizi Atölyesi 2",
+    "description": "Welcome to our new blog, R ile Veri Analizi Atölyesi. We hope you enjoy \nreading what we have to say!",
+    "author": [
+      {
+        "name": "Nora Jones",
+        "url": "https://example.com/norajones"
+      }
+    ],
+    "date": "2022-04-29",
+    "categories": [],
+    "contents": "\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2022-04-29T12:39:18+03:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/welcome/",
+    "title": "Welcome to R ile Veri Analizi Atölyesi",
+    "description": "Welcome to our new blog, R ile Veri Analizi Atölyesi. We hope you enjoy \nreading what we have to say!",
+    "author": [
+      {
+        "name": "Nora Jones",
+        "url": "https://example.com/norajones"
+      }
+    ],
+    "date": "2022-04-29",
+    "categories": [],
+    "contents": "\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2022-04-29T12:12:18+03:00",
+    "input_file": {}
+  }
+]

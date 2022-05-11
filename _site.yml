@@ -1,0 +1,14 @@
+name: "R_Dersi_Blog"
+title: "R ile Veri Analizi Atölyesi"
+description: |
+  R ile Veri Analizi Atölyesi
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Genel Bilgiler"
+      href: index.html
+    - text: "Dersler"
+      href: dersler.html
+    - text: "Hakkımızda"
+      href: about.html
+output: distill::distill_article

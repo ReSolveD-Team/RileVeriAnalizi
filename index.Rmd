@@ -1,0 +1,7 @@
+---
+title: "R ile Veri Analizi Atölyesi"
+site: distill::distill_website
+---
+
+
+Buraya genel şeyler konulacak

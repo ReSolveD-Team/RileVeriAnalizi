@@ -1,0 +1,35 @@
+---
+title: "About this blog"
+description: |
+  Some additional details about the blog
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+about
+
+about
+
+aboutaboutaboutabout
+about
+about
+about
+about
+about
+about
+aboutaboutaboutabout
+about
+
+aboutaboutaboutabout
+about
+about
+about
+about
+
+```{r}
+hist(Nile)
+```
+
+

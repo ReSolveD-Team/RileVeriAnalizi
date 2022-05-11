@@ -1,0 +1,27 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this blog",
+      "description": "Some additional details about the blog",
+      "author": [],
+      "contents": "\r\nabout\r\nabout\r\naboutaboutaboutabout about about about about about about\r\naboutaboutaboutabout about\r\naboutaboutaboutabout about about about about\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-04-29T16:31:31+03:00"
+    },
+    {
+      "path": "dersler.html",
+      "title": "R ile Veri Analizi Atölyesi",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-04-29T12:39:24+03:00"
+    },
+    {
+      "path": "index.html",
+      "title": "R ile Veri Analizi Atölyesi",
+      "author": [],
+      "contents": "\r\nBuraya genel şeyler konulacak\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-04-29T12:39:25+03:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}
