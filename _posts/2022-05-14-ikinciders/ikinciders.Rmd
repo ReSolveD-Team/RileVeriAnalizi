@@ -1,0 +1,385 @@
+---
+title: "2. Ders - Veri Yapıları"
+date: 2022-05-14
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+    toc_float: true
+    toc_depth: 5
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+## Veri yapıları
+
+### Console ve kod çalıştırma
+
+### Değişken nedir?
+
+-   Kahve örneği
+
+Değişkene bir değer atamak için "\<-" ifadesi kullanılır. Windows'ta "Alt" + "-" tuşlarına Mac içinse "Option" + "-" tuşlarına aynı anda basarak bu ifadeyi koyabilirsiniz. Aynı zamanda "\<" ve "-" karakterlerini ayrı ayrı da yazabilirsiniz.
+
+```{r}
+
+
+
+cay_kasigi <- "kahve"
+
+seker_kasigi <- "şeker"
+
+bardak <- "süt"
+
+``` 
+Bu fonksiyon kurgusunu şimdi anlamanıza gerek bulunmamaktadır. İlerki derslerde fonksiyon yapılarına daha detaylı bakacağız.
+
+```{r}
+kahve_makinesi <- function(a,b,c) {
+  paste0(c,"lü ", "ve ", b, "li ", a)
+}
+
+```
+
+Bir fonksiyonun çıktısı bir değişkene atanabilir. Fonksiyonların içerisinde değişkenler kullanılabilir.
+
+```{r}
+kahve_makinesi(cay_kasigi, seker_kasigi,bardak)
+
+kupa <- kahve_makinesi(cay_kasigi, seker_kasigi,bardak)
+
+kupa
+```
+
+### Operatörler
+
+
+
+Toplama, çıkarma, bölme ve çarpma operatörleri hem sayılarla hem de numeric değişkenlerle kullanılabilir.
+
+```{r}
+50 + 10
+
+x <- 50
+y <- 10
+
+x + y
+
+x - y
+
+x / y
+
+x * y
+```
+
+"**" ifadesiyle bir değerin karesi alınabilir.
+
+```{r}
+x ** 2
+
+```
+"**" ifadesiyle 0.5'in karesini almak değerin kare kökünü verir.
+
+```{r}
+x ** (0.5)
+
+```
+Bir değişkenin değeri sonradan değiştirilebilir.
+
+```{r}
+y <- 9
+
+```
+
+"%%" ifadesi bir sayının diğerine bölümünden kalanı verirken "%/%" ifadesi kalansız bölümü vermektedir.
+
+```{r}
+x %% y
+
+x %/% y
+
+```
+
+### Mantıksal Operatörler
+
+
+"==" mantıksal operatörü iki değerin birbirine eşit olup olmadığını kontrol eder. TRUE sonucu almak iki değerin eşit kabul edildiğini gösterirken FALSE sonucu almak iki değerin eşit kabul edilmediğini gösterir.
+
+```{r}
+
+1 == 1
+
+"Ahmet" == "Ahmet"
+
+"Ahmet" == 1
+
+```
+
+">" mantıksal operatörü ilk değerin ikinci değerden büyük olup olmadığına bakarken "<" mantıksal operatörü ilk değerin ikinci değerden küçük olup olmadığını kontrol eder.
+
+```{r}
+1 > 0
+
+1 < 0
+
+```
+
+
+">=" mantıksal operatörü ilk değerin ikinci değerden büyük ya da eşit olup olmadığına bakarken "<" mantıksal operatörü ilk değerin ikinci değerden küçük ya da eşit olup olmadığını kontrol eder.
+
+```{r}
+
+1 <= 0
+
+1 >= 0
+
+```
+
+### Veri tipleri
+
+# character, numeric/double, logical
+
+İki tırnak arasında gösterilen karaterler "character" veri tipindedirler.
+
+```{r}
+
+typeof("şeker")
+
+typeof("40")
+
+``` 
+
+Küsuratlı ya da küsuratsız sayılar "double" veri tipindedirler.
+
+```{r}
+typeof(3)
+
+typeof(3.3)
+
+```
+
+TRUE, FALSE ve NA "logical" veri tipindedirler. TRUE ve FALSE, T ve F şeklinde de yazılabilirler. Bu iki kullanım dışında bir kullanım yoktur.
+
+```{r}
+typeof(TRUE)
+
+typeof(FALSE)
+
+typeof(NA)
+
+```
+
+Veri dönüşümü yapmak için "as.numeric", "as.character" ve "as.logical" gibi fonksiyonlar kullanılabilir. Bu fonksiyonlar sadece veriler dönüştürülebilir oldukları zaman işe yararlar. Yani 4 sayısı tırnak işareti ile "4" olduğu zaman character olurken, tırnaklar kalkınca numeric/double olarak kabul edilmektedir. Bu nedenle "4", 4'e dönüştürülebilir. Ama "dört" yazısından tırnaklar kalksa da numeric  bir ifade alınamamaktadır. Bu nedenle dönüşüm yapılamaz ve sonuç olarak NA alınır.
+
+```{r}
+dort <- as.numeric("4")
+
+typeof(dort)
+
+x <- as.character(453)
+
+typeof(x)
+
+as.numeric("dört")
+
+```
+
+Logical veriler numeric hale geldikleri zaman TRUE için 1, FALSE için 0 çıktısı alınır. Karaktere dönüştürüldükleri zaman ise yazıya tırnak eklenerek character olurlar. "FALSE" ya da "TRUE" gibi.
+
+```{r}
+as.numeric(FALSE)
+
+as.character(FALSE)
+
+```
+
+## Vektör, DataFrame ve Liste
+
+### Vektörler
+
+
+Birden fazla değeri tek bir değişkende tutmak için kullanılan tek boyutlu değişkenlerden bir tanesi vektörlerdir ve c() fonksiyonu ile oluşturulurlar.
+
+```{r}
+vektor <- c(1,2,3)
+
+vektor
+
+```
+
+Vektörlerin veri tipi içersindeki elemanların veri tipi ile aynıdır.
+
+```{r}
+typeof(vektor)
+
+vektor <- c(TRUE,FALSE,TRUE)
+
+vektor
+
+typeof(vektor)
+```
+
+Eğer içerisindeki elemanların hepsi aynı veri tipinden değilse şu şekilde dönüşümler olur:
+Numeric/double ve logical veri tipleri, eğer vektör içinde bir character varsa character veri tipine dönüşürler.
+Logical veri tipi eğer vektör içinde bir numeric/double varsa numeric/double veri tipine dönüşür.
+
+```{r}
+vektor <- c("4", 1, 2)
+
+typeof(vektor)
+
+vektor
+
+vektor <- c(TRUE,FALSE,5)
+
+typeof(vektor)
+
+vektor
+
+vektor <- c(TRUE,FALSE,"5")
+
+typeof(vektor)
+
+vektor
+
+```
+
+Bir veri tipini dönüşemeyeceği bir forma sokmaya çalışırsak "NA" sonucu alırız.
+
+```{r}
+vektor <- c(TRUE,FALSE,as.logical("5"))
+
+typeof(vektor)
+
+vektor
+```
+
+### Dataframe
+
+Dataframeler tabular veriyi tanımlamak için kullanılırlar ve satır ve sütunlardan oluşurlar. Bir dataframe oluşturmak için data.frame() fonksiyonu kullanılır. Aşağıdaki örnekte olduğu gibi sütun isimleri yazılarak, sütunları oluşturan vektörler bu isimlere atanır.
+
+```{r}
+isim <- c("ahmet", "selin", "hüseyin", "ayşe")
+
+df <- data.frame(isimler = isim, notlar = c(30,25,15,40))
+
+df
+
+```
+
+Her bir sütunun içerisindeki vektörün tipi yukarıda anlatılan vektör tipi kuralları içerisinde belirlenir. Mesela bir character bulunan sütunlarda diğer tüm elemanlar sayı da olsa vektörün veri tipi, dolayısıyla kalan tüm elemanlar karaktere dönüşür. Ya da bir double verinin bulunduğu sütunlardaki logical veriler double'a dönüşür.
+
+```{r}
+df2 <- data.frame(isimler = c("ahmet", "selin", "hüseyin", "ayşe"), notlar = c(30,25,50,"40"))
+
+df2
+
+df3 <- data.frame(isimler = c("ahmet", "selin", "hüseyin", "ayşe"), notlar = c(30,25,50,40), devamsılık = c(1,T,F,T))
+
+df3
+
+```
+
+### Liste ve Veri alt kümelerine ulaşım
+
+list: Bir liste oluşturmak için kullanılan fonksiyon
+
+```{r}
+liste <- list(c(T,T,F,T), 4, "ahmet")
+
+```
+
+Listenin veri tipi "list" dir.
+
+```{r}
+
+typeof(liste)
+
+```
+
+Liste ve vektörlerin elemanlarına ulaşmak için köşeli parantezler "[]" kullanılır. Aşağıdaki ilk satırdaki kod listenin ikinci elemanına ulaşmaktadır. İkinci satırdaki kod ise vektörün ilk elemanına ulaşmaktadır.
+
+```{r}
+liste[2]
+
+vektor[1]
+
+```
+
+Tek köşeli parantez "[]" ilk elemana ulaşmakla birlikte, vektöre ulaşamaz. Vektöre ulaşmak için iki köşeli parantez "[[]]" kullanmak gerekir.
+
+```{r}
+ilk_eleman <- liste[1]
+
+typeof(ilk_eleman)
+
+ilk_eleman <- liste[[1]]
+
+typeof(ilk_eleman)
+
+```
+
+Köşeli parantezlerle dataframe'lerin sütunlarına da ulaşılabilir. Tek köşeli parantez kullanıldığı zaman görsel çıktı olarak sütun kod bloğunun altında gözükür. Veri tipi olarak ise "list" tipindedir.
+
+```{r}
+df3["isimler"]
+
+typeof(df3["isimler"])
+
+typeof(df$isimler)
+```
+
+İki köşeli parantez kullanıldığı zaman ise sütunu oluşturan vektöre ulaşılabilir.
+
+```{r}
+df3[["isimler"]]
+
+typeof(df3[["isimler"]])
+
+```
+
+Köşeli parantezler yerine dolar işareti kullanarak da sütunu oluşturan vektöre ulaşmak mümkündür.
+
+```{r}
+df3$isimler
+
+df3$isimler[1:3]
+
+```
+
+## %\>%
+
+## Veri okuma ve yazma
+
+read.csv: Bir veri dosyasını r ortamına aktarabilmek için kullanılacak fonksiyon
+
+```{r}
+df_iq <- read.csv("./data/student_clustering.csv")
+```
+
+max: Bir vektördeki maksimum sayıyı bulan fonksiyon
+
+```{r}
+max(df_iq$cgpa)
+```
+
+min: Bir vektördeki minimum sayıyı bulan fonksiyon
+
+```{r}
+min(df_iq$iq)
+```
+
+İki sütunu toplayıp tek bir sütuna yazmak için aşağıdaki ifade yazılabilir.
+
+```{r}
+df_iq$toplam <- df_iq$cgpa + df_iq$iq
+
+```
+
+write.csv: Bir dataframe'i bir dosya olarak kaydetmek için kullanılacak fonksiyon
+
+```{r}
+write.csv(df_iq, "student_clustering_revised.csv")
+```
