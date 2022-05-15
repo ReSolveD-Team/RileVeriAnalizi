@@ -17,7 +17,7 @@ Ders Kaynağı: <https://r4ds.had.co.nz/>
 
 ## 1.Hafta
 
-### Programlamaya Giriş ve R
+### [Programlamaya Giriş ve R](https://resolved-team.github.io/RileVeriAnalizi/posts/welcome/)
 
 **11 Mayıs Çarşamba : 20.00-22.00**
 
@@ -44,7 +44,7 @@ Ders Kaynağı: <https://r4ds.had.co.nz/>
 -   *Kaggle'dan ya da farklı kaynaklardan ders boyu kullanılacak verinin
     seçilip onaylatılması*
 
-### Veri Yapıları ve Döngüler
+### [Veri Yapıları ve Döngüler](https://resolved-team.github.io/RileVeriAnalizi/posts/2022-05-14-ikinciders/)
 
 **14 Mayıs Cumartesi: 14.00-16.00**
 
