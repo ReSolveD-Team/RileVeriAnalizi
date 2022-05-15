@@ -13,11 +13,13 @@ output:
 knitr::opts_chunk$set(eval = FALSE)
 ```
 
-## Veri yapıları
+Bu derste kullanılan veriye [linkinden](https://www.kaggle.com/datasets/kuchhbhi/cpga-iq-placement) ulaşabilirsiniz.
 
-### Console ve kod çalıştırma
+R cheatsheetleri için bu [linki](https://www.rstudio.com/resources/cheatsheets/) kullanabilirsiniz.
 
-### Değişken nedir?
+# Console ve kod çalıştırma
+
+# Değişken nedir?
 
 -   Kahve örneği
 
@@ -33,7 +35,8 @@ seker_kasigi <- "şeker"
 
 bardak <- "süt"
 
-``` 
+```
+
 Bu fonksiyon kurgusunu şimdi anlamanıza gerek bulunmamaktadır. İlerki derslerde fonksiyon yapılarına daha detaylı bakacağız.
 
 ```{r}
@@ -53,9 +56,7 @@ kupa <- kahve_makinesi(cay_kasigi, seker_kasigi,bardak)
 kupa
 ```
 
-### Operatörler
-
-
+# Operatörler
 
 Toplama, çıkarma, bölme ve çarpma operatörleri hem sayılarla hem de numeric değişkenlerle kullanılabilir.
 
@@ -74,18 +75,20 @@ x / y
 x * y
 ```
 
-"**" ifadesiyle bir değerin karesi alınabilir.
+"\*\*" ifadesiyle bir değerin karesi alınabilir.
 
 ```{r}
 x ** 2
 
 ```
-"**" ifadesiyle 0.5'in karesini almak değerin kare kökünü verir.
+
+"\*\*" ifadesiyle 0.5'in karesini almak değerin kare kökünü verir.
 
 ```{r}
 x ** (0.5)
 
 ```
+
 Bir değişkenin değeri sonradan değiştirilebilir.
 
 ```{r}
@@ -102,8 +105,7 @@ x %/% y
 
 ```
 
-### Mantıksal Operatörler
-
+## Mantıksal Operatörler
 
 "==" mantıksal operatörü iki değerin birbirine eşit olup olmadığını kontrol eder. TRUE sonucu almak iki değerin eşit kabul edildiğini gösterirken FALSE sonucu almak iki değerin eşit kabul edilmediğini gösterir.
 
@@ -117,7 +119,7 @@ x %/% y
 
 ```
 
-">" mantıksal operatörü ilk değerin ikinci değerden büyük olup olmadığına bakarken "<" mantıksal operatörü ilk değerin ikinci değerden küçük olup olmadığını kontrol eder.
+"\>" mantıksal operatörü ilk değerin ikinci değerden büyük olup olmadığına bakarken "\<" mantıksal operatörü ilk değerin ikinci değerden küçük olup olmadığını kontrol eder.
 
 ```{r}
 1 > 0
@@ -126,8 +128,7 @@ x %/% y
 
 ```
 
-
-">=" mantıksal operatörü ilk değerin ikinci değerden büyük ya da eşit olup olmadığına bakarken "<" mantıksal operatörü ilk değerin ikinci değerden küçük ya da eşit olup olmadığını kontrol eder.
+"\>=" mantıksal operatörü ilk değerin ikinci değerden büyük ya da eşit olup olmadığına bakarken "\<" mantıksal operatörü ilk değerin ikinci değerden küçük ya da eşit olup olmadığını kontrol eder.
 
 ```{r}
 
@@ -137,9 +138,9 @@ x %/% y
 
 ```
 
-### Veri tipleri
+# Veri tipleri
 
-# character, numeric/double, logical
+character, numeric/double, logical
 
 İki tırnak arasında gösterilen karaterler "character" veri tipindedirler.
 
@@ -149,7 +150,7 @@ typeof("şeker")
 
 typeof("40")
 
-``` 
+```
 
 Küsuratlı ya da küsuratsız sayılar "double" veri tipindedirler.
 
@@ -171,7 +172,7 @@ typeof(NA)
 
 ```
 
-Veri dönüşümü yapmak için "as.numeric", "as.character" ve "as.logical" gibi fonksiyonlar kullanılabilir. Bu fonksiyonlar sadece veriler dönüştürülebilir oldukları zaman işe yararlar. Yani 4 sayısı tırnak işareti ile "4" olduğu zaman character olurken, tırnaklar kalkınca numeric/double olarak kabul edilmektedir. Bu nedenle "4", 4'e dönüştürülebilir. Ama "dört" yazısından tırnaklar kalksa da numeric  bir ifade alınamamaktadır. Bu nedenle dönüşüm yapılamaz ve sonuç olarak NA alınır.
+Veri dönüşümü yapmak için "as.numeric", "as.character" ve "as.logical" gibi fonksiyonlar kullanılabilir. Bu fonksiyonlar sadece veriler dönüştürülebilir oldukları zaman işe yararlar. Yani 4 sayısı tırnak işareti ile "4" olduğu zaman character olurken, tırnaklar kalkınca numeric/double olarak kabul edilmektedir. Bu nedenle "4", 4'e dönüştürülebilir. Ama "dört" yazısından tırnaklar kalksa da numeric bir ifade alınamamaktadır. Bu nedenle dönüşüm yapılamaz ve sonuç olarak NA alınır.
 
 ```{r}
 dort <- as.numeric("4")
@@ -195,10 +196,9 @@ as.character(FALSE)
 
 ```
 
-## Vektör, DataFrame ve Liste
+# Vektör, DataFrame ve Liste
 
-### Vektörler
-
+## Vektörler
 
 Birden fazla değeri tek bir değişkende tutmak için kullanılan tek boyutlu değişkenlerden bir tanesi vektörlerdir ve c() fonksiyonu ile oluşturulurlar.
 
@@ -221,9 +221,7 @@ vektor
 typeof(vektor)
 ```
 
-Eğer içerisindeki elemanların hepsi aynı veri tipinden değilse şu şekilde dönüşümler olur:
-Numeric/double ve logical veri tipleri, eğer vektör içinde bir character varsa character veri tipine dönüşürler.
-Logical veri tipi eğer vektör içinde bir numeric/double varsa numeric/double veri tipine dönüşür.
+Eğer içerisindeki elemanların hepsi aynı veri tipinden değilse şu şekilde dönüşümler olur: Numeric/double ve logical veri tipleri, eğer vektör içinde bir character varsa character veri tipine dönüşürler. Logical veri tipi eğer vektör içinde bir numeric/double varsa numeric/double veri tipine dönüşür.
 
 ```{r}
 vektor <- c("4", 1, 2)
@@ -256,7 +254,7 @@ typeof(vektor)
 vektor
 ```
 
-### Dataframe
+## Dataframe
 
 Dataframeler tabular veriyi tanımlamak için kullanılırlar ve satır ve sütunlardan oluşurlar. Bir dataframe oluşturmak için data.frame() fonksiyonu kullanılır. Aşağıdaki örnekte olduğu gibi sütun isimleri yazılarak, sütunları oluşturan vektörler bu isimlere atanır.
 
@@ -282,7 +280,7 @@ df3
 
 ```
 
-### Liste ve Veri alt kümelerine ulaşım
+## Liste ve Veri alt kümelerine ulaşım
 
 list: Bir liste oluşturmak için kullanılan fonksiyon
 
@@ -349,9 +347,9 @@ df3$isimler[1:3]
 
 ```
 
-## %\>%
+# %\>%
 
-## Veri okuma ve yazma
+# Veri okuma ve yazma
 
 read.csv: Bir veri dosyasını r ortamına aktarabilmek için kullanılacak fonksiyon
 

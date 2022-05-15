@@ -1477,21 +1477,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#veri-yapıları" id="toc-veri-yapıları">Veri yapıları</a>
-<ul>
 <li><a href="#console-ve-kod-çalıştırma"
 id="toc-console-ve-kod-çalıştırma">Console ve kod çalıştırma</a></li>
 <li><a href="#değişken-nedir" id="toc-değişken-nedir">Değişken
 nedir?</a></li>
-<li><a href="#operatörler" id="toc-operatörler">Operatörler</a></li>
+<li><a href="#operatörler" id="toc-operatörler">Operatörler</a>
+<ul>
 <li><a href="#mantıksal-operatörler"
 id="toc-mantıksal-operatörler">Mantıksal Operatörler</a></li>
-<li><a href="#veri-tipleri" id="toc-veri-tipleri">Veri tipleri</a></li>
 </ul></li>
-<li><a href="#character-numericdouble-logical"
-id="toc-character-numericdouble-logical">character, numeric/double,
-logical</a>
-<ul>
+<li><a href="#veri-tipleri" id="toc-veri-tipleri">Veri tipleri</a></li>
 <li><a href="#vektör-dataframe-ve-liste"
 id="toc-vektör-dataframe-ve-liste">Vektör, DataFrame ve Liste</a>
 <ul>
@@ -1504,13 +1499,17 @@ kümelerine ulaşım</a></li>
 <li><a href="#section" id="toc-section">%&gt;%</a></li>
 <li><a href="#veri-okuma-ve-yazma" id="toc-veri-okuma-ve-yazma">Veri
 okuma ve yazma</a></li>
-</ul></li>
 </ul>
 </nav>
 </div>
-<h2 id="veri-yapıları">Veri yapıları</h2>
-<h3 id="console-ve-kod-çalıştırma">Console ve kod çalıştırma</h3>
-<h3 id="değişken-nedir">Değişken nedir?</h3>
+<p>Bu derste kullanılan veriye <a
+href="https://www.kaggle.com/datasets/kuchhbhi/cpga-iq-placement">linkinden</a>
+ulaşabilirsiniz.</p>
+<p>R cheatsheetleri için bu <a
+href="https://www.rstudio.com/resources/cheatsheets/">linki</a>
+kullanabilirsiniz.</p>
+<h1 id="console-ve-kod-çalıştırma">Console ve kod çalıştırma</h1>
+<h1 id="değişken-nedir">Değişken nedir?</h1>
 <ul>
 <li>Kahve örneği</li>
 </ul>
@@ -1550,7 +1549,7 @@ içerisinde değişkenler kullanılabilir.</p>
 </code></pre>
 </div>
 </div>
-<h3 id="operatörler">Operatörler</h3>
+<h1 id="operatörler">Operatörler</h1>
 <p>Toplama, çıkarma, bölme ve çarpma operatörleri hem sayılarla hem de
 numeric değişkenlerle kullanılabilir.</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -1601,7 +1600,7 @@ ifadesi kalansız bölümü vermektedir.</p>
 </code></pre>
 </div>
 </div>
-<h3 id="mantıksal-operatörler">Mantıksal Operatörler</h3>
+<h2 id="mantıksal-operatörler">Mantıksal Operatörler</h2>
 <p>“==” mantıksal operatörü iki değerin birbirine eşit olup olmadığını
 kontrol eder. TRUE sonucu almak iki değerin eşit kabul edildiğini
 gösterirken FALSE sonucu almak iki değerin eşit kabul edilmediğini
@@ -1638,9 +1637,8 @@ ikinci değerden küçük ya da eşit olup olmadığını kontrol eder.</p>
 </code></pre>
 </div>
 </div>
-<h3 id="veri-tipleri">Veri tipleri</h3>
-<h1 id="character-numericdouble-logical">character, numeric/double,
-logical</h1>
+<h1 id="veri-tipleri">Veri tipleri</h1>
+<p>character, numeric/double, logical</p>
 <p>İki tırnak arasında gösterilen karaterler “character” veri
 tipindedirler.</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -1706,8 +1704,8 @@ eklenerek character olurlar. “FALSE” ya da “TRUE” gibi.</p>
 </code></pre>
 </div>
 </div>
-<h2 id="vektör-dataframe-ve-liste">Vektör, DataFrame ve Liste</h2>
-<h3 id="vektörler">Vektörler</h3>
+<h1 id="vektör-dataframe-ve-liste">Vektör, DataFrame ve Liste</h1>
+<h2 id="vektörler">Vektörler</h2>
 <p>Birden fazla değeri tek bir değişkende tutmak için kullanılan tek
 boyutlu değişkenlerden bir tanesi vektörlerdir ve c() fonksiyonu ile
 oluşturulurlar.</p>
@@ -1772,7 +1770,7 @@ sonucu alırız.</p>
 </code></pre>
 </div>
 </div>
-<h3 id="dataframe">Dataframe</h3>
+<h2 id="dataframe">Dataframe</h2>
 <p>Dataframeler tabular veriyi tanımlamak için kullanılırlar ve satır ve
 sütunlardan oluşurlar. Bir dataframe oluşturmak için data.frame()
 fonksiyonu kullanılır. Aşağıdaki örnekte olduğu gibi sütun isimleri
@@ -1804,8 +1802,8 @@ verinin bulunduğu sütunlardaki logical veriler double’a dönüşür.</p>
 </code></pre>
 </div>
 </div>
-<h3 id="liste-ve-veri-alt-kümelerine-ulaşım">Liste ve Veri alt
-kümelerine ulaşım</h3>
+<h2 id="liste-ve-veri-alt-kümelerine-ulaşım">Liste ve Veri alt
+kümelerine ulaşım</h2>
 <p>list: Bir liste oluşturmak için kullanılan fonksiyon</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -1880,8 +1878,8 @@ oluşturan vektöre ulaşmak mümkündür.</p>
 </code></pre>
 </div>
 </div>
-<h2 id="section">%&gt;%</h2>
-<h2 id="veri-okuma-ve-yazma">Veri okuma ve yazma</h2>
+<h1 id="section">%&gt;%</h1>
+<h1 id="veri-okuma-ve-yazma">Veri okuma ve yazma</h1>
 <p>read.csv: Bir veri dosyasını r ortamına aktarabilmek için
 kullanılacak fonksiyon</p>
 <div class="layout-chunk" data-layout="l-body">
