@@ -1,0 +1,354 @@
+---
+title: "3. Ders - Döngüler"
+author: [Yusuf Akbulut]
+date: 2022-05-18
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+    toc_float: true
+    toc_depth: 5
+---
+
+```{r}
+library(rmarkdown)
+```
+
+# Vektörel İşlemler
+
+R işlem yaparken vektörel işlemlerde eleman seviyesinde işlem yapar. Bu temelde n'ninci elemanlar n'ninci elemanın işleme sokulmasıdır. Mesela aşağıdaki b vektörü ile c vektörü çapılırken b'nin 1. elemanı ile c'nin 1. elemanı, b'nin 2. elemanı ile c'nin 2. elemanı şeklinde çarpılarak ilerlenir.
+
+```{r}
+b <-  c(1, 4, 7, 77)
+
+c <-  c(3, 4, 2, 11)
+
+b * c
+```
+
+Eğer vektörlerin eleman sayıları eşit değilse R otomatik olarak eleman sayısı az olan vektörün eleman sayısını uzun vektörün sayısına getirir. Mesela a vektörün d ile bir işleme sokulduğunda `r c(5, 5, 5, 5, 5)` şeklini alır. e vektörü ise `r c(6, 7, 5, 6, 7)` şeklini alır. Bu değişiklikleri de uyarı olarak çıktıda belirtir.
+
+```{r}
+a <-  c(5)
+
+d <-  c(2, 5, 2, 5, 8)
+
+e <-  c(6, 7, 5)
+
+a * d
+
+d * e
+```
+
+Burada ek olarak küçük bir bilgi. Bir vektörün elemanını değiştirmek ya da eklemek istersek aşağıdaki notasyonu kullanırız.
+
+```{r}
+z <- c(42, 22, 43)
+
+z[2] <- 123
+
+z
+```
+
+# Tidyverse
+
+<https://www.tidyverse.org/>
+
+İçerisinde bir çok paketi bulunduran R kullanıını kolaylaştıran bir yaklaşım.
+
+Bu kısımda kullanacağımız paketi ve veriyi yüklüyoruz. Eğer paketler sizde yüklü değilse başında \# olan satırlardan \# sembolünü silerek paketleri yükleyebilirsiniz
+
+```{r}
+#install.packages("tidyverse")
+#install.packages("nycflights13")
+
+library(tidyverse)
+library(nycflights13)
+
+ucuslar <- flights
+paged_table(ucuslar)
+```
+
+# For döngüsü
+
+For döngüleri temelde elle tekrar tekrar yapma durumunda kaldığımız işlemleri otomatize etmemize yarıyor. Belirli bir sentaks takip edilen bu döngü iki temel kısımdan oluşuyor.
+
+1.  kısımda üzerinde gezmek istediğimiz vektörü (ya da üzerinde gezmeye uygun veri) belirtiyoruz.
+2.  kısımda ise her adımda yapılacak işlemi belirtiyoruz.
+
+```{r}
+median(ucuslar$distance)
+median(ucuslar$dep_delay, na.rm = T)
+```
+
+burada uçuşlar verisinin her sütunu için medyan değerini bulmak istediğimizde hem uzun sürecek hem verimsiz olacaktır. Değişiklik yapmak istediğimizde her adım için ayrıca bu değişiklikleri gerçekleştirmemiz de cabası. 
+
+Bunun için döngüleri kullanıyoruz. Aşağıda kodun yanına döngü için gerekli basamaklar yazılı: 
+
+```{r}
+
+# üzerinde gezeceğimiz basit bir vektör oluşturduk.
+notlar <- c(90, 20, 70, 60)
+
+for (i in notlar) { # bu kısımda hangi veri üzerinde gezeceğimizi belirtiriyoruz
+  
+  print(i**2) # bu kısımda da her adımda ne yapacağımızı belirtiyoruz.
+  
+}
+
+```
+
+Alıştırma: Notlar vektörü elemanlarının 7 ile bölümünden kalanları for döngüsü kullanarak hesaplayınız.
+
+```{r}
+
+notlar <- c(90, 20, 70, 60)
+
+for (i in notlar) {
+  print(i %% 7)
+  
+}
+
+```
+
+Basit örnekten sonra biraz daha karmaşık bir örneğe daha bakacağız. Önce bir datafreame/tibble oluşturalım.
+
+```{r}
+df <- tibble(
+  a = rnorm(10),
+  b = rnorm(10),
+  c = rnorm(10),
+  d = rnorm(10)
+)
+
+paged_table(df)
+
+```
+
+DataFrame sütunlarına aşağıdaki gibi iki şekilde ulaşabiliriz. Sütun sırası ya da ismi kullanılarak. Bu döngüde birinci versiyonu kullanacağız.
+
+```{r eval=FALSE}
+df[[1]]
+df[[2]]
+df[[3]]
+df[[4]]
+
+
+df$a
+df$b
+df$c
+df$d
+```
+
+Tüm sütunların medyan değerlerini bulmak istediğimizi düşünelim.
+
+```{r eval=FALSE}
+
+median(df[[1]])
+median(df[[2]])
+median(df[[3]])
+median(df[[4]])
+
+```
+
+Tabii ki bu şekilde tek tek yazmak yerine bir döngü kurmak daha kolay. Bu örnekte her sütunun medyan değerlerini bulup bir vektöre kaydedeceğiz. Bunun için önce boş ya da daha hızlı olması açısından yazdıracağımız eleman sayısı uzunluğunda "0"lardan oluşan bir vectör oluşturacağız.
+
+```{r}
+output <- vector("double", ncol(df)) 
+```
+
+Vektör oluşturmanın bir çok şekli olmakla beraber ikinci kullanım döngüler için daha uygundur. Bu şekilde bir kullanımda dataframe'mizdeki sütun sayısından bağımsız bir şekilde döngü oluştururken daha hızlı bir döngü sistemi kurmuş oluyoruz.
+
+Kullandığımız `r vector()` fonksiyonu ilk argüman olarak tür ikinci argüman olarak da elaman sayısı almaktadır. Eleman sayısı yerine kullandığımız `ncol()` fonksiyonu dataframe'deki sütun sayısını vermektedir. Sonuçta oluşan vektör de "output" isimli bir vektöre kaydedilmektedir.
+
+Yukarıdaki fonksiyonun Türkçesini "Verimdeki sütun sayısı kadar sıfırlardan oluşan bir vektör oluştur. Bunu da 'output' isimli değişkene yazdır." olarak okuyabiliriz.
+
+```{r}
+for (i in seq_along(df)) {        
+  output[[i]] <- median(df[[i]])      
+}
+```
+
+For döngüsünün asıl yapısına geldiğimizde iki kısımdan oluştuğunu belirtmiştik. Buradaki ilk kısımda üzerinde gezilecek veri kısmında yine bir fonsiyon görüyoruz. Bu fonksiyon bize 1'den n'ninci sayıya kadar (n dataframe'in sütun sayısı olmak üzere) bir vektör oluşturuyor. Daha sonra bu dataframe elemanlarını for döngüsünün ana gövdesinde sırası ile işleme sokuyoruz.
+
+```{r}
+seq_along(df)
+```
+
+Üzerinde gezilen vektör aşağıdaki gibi oluşuyor. Her adımda da 1, 2 ,3 ve 4 ana gövdede ki "i" nin yerine sıra ile konularak kod çalıştırılıyor. Çıkan sonuç da daha önce oluşturduğumuz vektörün i'ye karşılık gelen sırasına yazılıyor. sonuç aşağıdaki gibi oluşuyor.
+
+```{r}
+output
+```
+
+# While döngüsü
+
+While döngüsü for döngüsü ile çok benzer olmakla beraber ana fark 1. kısımdadır. While döngüsünde yapının birici kısmının TRUE ya da FALSE olmasına göre 2. kısmın çalışıp çalışmaması durumu vardır. Döngünün ilk kısmındaki ifadenin TRUE olduğu her durumda döngü çalışmaya devam eder. Sonsuz bir döngüye girmemesi için ana bölüme her seferinde değişecek bir parametre eklenir bununla bir süre sonra döngünün durması sağlanır. 
+
+aşağıdaki örnekte i'nin 1'e eşit olduğu durumda döngü başlıyor. her turda i 1 artıyor. i'nin altı olduğu durumda i<6 yanlış olduğu için döngü duruyor.
+ 
+```{r}
+
+1 < 6
+
+i <- 1
+while (i < 6) {
+  print(i)
+  i <- i + 1
+}
+
+```
+
+# Fonksiyonlar
+
+R kullanırken temelde tüm işlemlerimiz fonksiyonları çalıştırmaktır. Her işlem bir fonksiyonun çalışması ve verdiği çıktının işlemesi üzerine devam eder.
+
+Fonksiyon oluştururken de RStudio'nun snippet özelliğini kullanarak iskeletini otomatik olarak çekebiliriz. Fonksiyonlar 3 ana kısımdan oluşuyor.
+
+1. kısımda daha sonra fonksiyonu çağıracağımız isim belirleniyor.
+2. kısımda fonksiyonun alacağı değişkenler oluşturuluyor.
+3. kısımda bu değişkenlerin fonksiyon içerisinde ne tür işlemlerden geçeceği belirtiliyor.
+
+Aşağıdaki örnekte a ve b değişkenleri alan `ders_fnc` bu iki değeri çarparak sonucunu veriyor. 
+
+```{r}
+
+ders_fnc <- function(a, b = 3) {
+  a*b
+}
+
+```
+
+Bu fonksiyonda b değeri varsayılan olarak 3 değerini alıyor. Eğer fonksiyona tek değer verilirse ikinci değeri 3 olarak varsayıyor. Aşağıda örnekleri görülebilir.
+
+```{r}
+ders_fnc(6, 7)
+```
+
+```{r}
+ders_fnc(6)
+```
+
+
+```{r}
+
+mean(ucuslar$dep_time)
+
+mean(ucuslar$dep_time, na.rm = T)
+
+ncol(ucuslar)
+
+```
+
+# select fonksiyonu
+
+`select()` fonksiyonu verimizin sütunlarını seçme işlevi görüyor.
+
+```{r}
+select(ucuslar, year, month, day, dep_time)
+```
+
+Seçmek istediğimiz sütunları tek tek yazmakla beraber yardımcı fonksiyonlar da kullanabiliriz. `contains()` fonksiyonu sütün isminde geçen karakterlere göre filtreleme yapamaktadır.
+
+```{r}
+select(ucuslar, contains("arr"))
+```
+
+`starts_with()` fonksiyonu sütun isminin başlangıcı `ends_with()` fonksiyonu ise sütun isminin sonuna göre filtreleme yapmamızı sağlamaktadır.
+
+```{r}
+select(ucuslar, starts_with("dep"))
+```
+
+```{r}
+select(ucuslar, ends_with("time"))
+```
+
+
+# filter fonksiyonu
+
+filter fonksiyonu satırlar bazında filtreleme yapmamızı sağlamaktadır. Bunun için filtreleme yapmak istediğimiz sütunda bir mantıksal ifade kullanmamız gerekiyor. Aşağıdaki 1. örnekte sayısal değerlerden oluşan bir sütun için `>` ifadesi kullanılmıştır. `arr_değeri` 33'ten büyük olan satırları getirmektedir. 2. örnekte ise metin verisi tutan sütunda "UA" ifadesine eşit olan satırlar filtrelenmiştir.
+
+```{r}
+
+filter(ucuslar, arr_delay > 33)
+
+filter(ucuslar, carrier == "UA")
+
+```
+
+# arrange fonksiyonu
+
+`arrange()` fonksionu satırları büyükten küçüğe ya da küçükten büyüğe sıralamaya yaramaktadır. Eğer birden fazla sütun ismi verilirse ilkinde eşit durumda olan satırları sonrakilere göre sıralıyor. `desc()` fonksiyonu içinde kalanları büyükten küçüğe diğerlerini küçükten büyüğe sıralıyor. 
+
+```{r}
+arrange(ucuslar, arr_delay, dep_delay, desc(day))
+
+```
+
+# %\>% (Pipe)
+
+Bu sembol R'daki değişkenleri bir sonraki fonksiyona taşımaya yarıyor. tidyverse paketinin bir fonksiyonu olan pipe daha temiz ve anlaşılır bir kod ile çalışma imkanı sağlıyor.
+
+Aşağıdaki örneklerde olduğu gibi `ucuslar` verisi önce `filter()` sonra `arrange()` fonksiyonlarına aktarılıyor.
+
+```{r eval=FALSE}
+arr_33 <- filter(ucuslar, arr_delay > 33)
+arrange(arr_33, desc(arr_delay))
+
+ucuslar %>% 
+  filter(arr_delay > 33) %>% 
+  arrange(desc(arr_delay))
+```
+
+# Atölye Alıştırmaları
+
+```{r eval = FALSE}
+
+ucuslar %>%
+  filter(month == 1) %>% 
+  select(dep_time, sched_dep_time, arr_time, sched_arr_time)
+
+ucuslar_ort <- ucuslar %>%
+  filter(month == 1) %>% 
+  select(contains("time")) %>% 
+  select(-air_time, -time_hour)
+
+vector <- c(1, 2, 3, 4)
+
+for (i in vector) {
+  print(names(ucuslar_ort)[i])
+  print((mean(ucuslar_ort[[i]], na.rm = T)))
+}
+
+```
+
+```{r eval = FALSE}
+
+sonuclar <- c()
+
+sonuclar[]
+
+for (i in seq_along(ucuslar_ort)) {
+ sonuclar[i] <- mean(ucuslar_ort[[i]], na.rm = T)
+}
+
+sonuclar
+```
+
+```{r eval = FALSE}
+
+sonuclar <- vector("double", 4)
+
+
+for (i in seq_along(ucuslar_ort)) {
+ sonuclar[i] <- mean(ucuslar_ort[[i]], na.rm = T)
+}
+
+sonuclar
+
+ucuslar_ort[[1]]
+
+```
+
+

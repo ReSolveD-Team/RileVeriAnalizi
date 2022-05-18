@@ -1,5 +1,6 @@
 ---
 title: "2. Ders - Veri Yapıları"
+author: [Arif Yasin Kavdır]
 date: 2022-05-14
 output:
   distill::distill_article:
