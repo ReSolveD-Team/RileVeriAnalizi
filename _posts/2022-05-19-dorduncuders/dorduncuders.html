@@ -114,7 +114,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"NULL"}
+  {"type":"character","attributes":{},"value":["dorduncuders_files/anchor-4.2.2/anchor.min.js","dorduncuders_files/bowser-1.9.3/bowser.min.js","dorduncuders_files/distill-2.2.21/template.v2.js","dorduncuders_files/header-attrs-2.14/header-attrs.js","dorduncuders_files/jquery-3.6.0/jquery-3.6.0.js","dorduncuders_files/jquery-3.6.0/jquery-3.6.0.min.js","dorduncuders_files/jquery-3.6.0/jquery-3.6.0.min.map","dorduncuders_files/popper-2.6.0/popper.min.js","dorduncuders_files/tippy-6.2.7/tippy-bundle.umd.min.js","dorduncuders_files/tippy-6.2.7/tippy-light-border.css","dorduncuders_files/tippy-6.2.7/tippy.css","dorduncuders_files/tippy-6.2.7/tippy.umd.min.js","dorduncuders_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1525,34 +1525,62 @@ derste de değindiğimiz gibi aşağıdaki örneklerde bu operatörlerin neler
 olduğunu görebilirsiniz.</p>
 <p>“X ve Y eşit midir?”, “‘Ali’ ile ‘ali’ eşit midir?”</p>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>X</span> <span class='op'>&lt;-</span> <span class='fl'>10</span>
+<span class='va'>Y</span> <span class='op'>&lt;-</span> <span class='fl'>12</span>
 
+<span class='va'>X</span> <span class='op'>==</span> <span class='va'>Y</span>
+
+<span class='st'>"Ali"</span> <span class='op'>==</span> <span class='st'>"ali"</span>
+</code></pre>
+</div>
 </div>
 <p>“X ve Y eşit değil midir?”</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>X</span> <span class='op'>!=</span> <span class='va'>Y</span>
+</code></pre>
+</div>
 </div>
 <p>“X, Y’den büyük müdür?”</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>X</span> <span class='op'>&gt;</span> <span class='va'>Y</span>
+</code></pre>
+</div>
 </div>
 <p>“X, Y’den küçük müdür?”</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>X</span> <span class='op'>&lt;</span> <span class='va'>Y</span>
+</code></pre>
+</div>
 </div>
 <p>“X, Y’ye eşit veya büyük müdür?”</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>X</span> <span class='op'>&gt;=</span> <span class='va'>Y</span>
+</code></pre>
+</div>
 </div>
 <p>“X, Y’ye eşit veya küçük müdür?”</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>X</span> <span class='op'>&lt;=</span> <span class='va'>Y</span>
+</code></pre>
+</div>
 </div>
 <p>Sadece tekil değerlerle değil, vektör gibi birden fazla elemana sahip
 veri yapılarıyla da mantıksal operatörler ile sorgu yapmak
 mümkündür.</p>
 <p>“Yaş verisindeki hangi değerler 3’ten büyüktür.”</p>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>yas</span> <span class='op'>&lt;-</span>  <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>3</span>,<span class='fl'>8</span>,<span class='fl'>9</span>,<span class='fl'>14</span>,<span class='fl'>15</span>,<span class='fl'>19</span>,<span class='fl'>22</span>,<span class='fl'>38</span>,<span class='fl'>50</span>,<span class='fl'>100</span><span class='op'>)</span>
 
+<span class='va'>yas</span> <span class='op'>&gt;</span> <span class='fl'>3</span>
+</code></pre>
+</div>
 </div>
 <p>Bazen birden fazla karşılaştırma sonucunu aynı anda elde etmemiz
 gerekebilir. Bu durumlarda “ve”, “veya”, “değil” gibi operatörlere
@@ -1560,29 +1588,46 @@ ihtiyaç doğmaktadır.</p>
 <p>“18 ve 18 yaşından büyük ve 60 yaşından küçük kimseler
 kimlerdir?”</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>yas</span> <span class='op'>&gt;=</span> <span class='fl'>18</span> <span class='op'>&amp;</span> <span class='va'>yas</span> <span class='op'>&lt;</span> <span class='fl'>60</span>
+</code></pre>
+</div>
 </div>
 <p>Şimdi de sadece çocuklara özel bir program için yaş sınırlarını
 koyalım. 3 yaş ve altı bu programa katılamasın.</p>
-Alıştırma: “3 yaşından büyük ve 18 yaşından küçük kişiler kimlerdir?”
+<p>Alıştırma: “3 yaşından büyük ve 18 yaşından küçük kişiler
+kimlerdir?”</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
 <p>“8 yaşından küçük veya 45 yaşından büyük kişiler kimlerdir?”</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>yas</span> <span class='op'>&lt;</span> <span class='fl'>8</span> <span class='op'>|</span> <span class='va'>yas</span> <span class='op'>&gt;</span> <span class='fl'>45</span>
+</code></pre>
+</div>
 </div>
 <p>“8 yaşından büyük veya 45 yaşından küçük olmayan kişiler
 kimlerdir?”</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='op'>!</span><span class='op'>(</span><span class='va'>yas</span> <span class='op'>&gt;</span> <span class='fl'>8</span><span class='op'>)</span> <span class='op'>|</span> <span class='op'>!</span><span class='op'>(</span><span class='va'>yas</span> <span class='op'>&lt;</span> <span class='fl'>45</span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <p>Tek bir değer üzerinden de birden fazla karşılaştırma yapmak
 mümkündür.</p>
 <p>“X’in tipi”character”dir ve X “elma” ya eşittir.” “X’in
 tipi”double”dır ya da “elma” ya eşittir.”</p>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>X</span> <span class='op'>&lt;-</span> <span class='st'>"elma"</span>
 
+<span class='va'>X</span> <span class='op'>==</span> <span class='st'>"elma"</span> <span class='op'>&amp;</span> <span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>X</span><span class='op'>)</span> <span class='op'>==</span> <span class='st'>"character"</span>
+
+<span class='va'>X</span> <span class='op'>==</span> <span class='st'>"elma"</span> <span class='op'>|</span> <span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>X</span><span class='op'>)</span> <span class='op'>==</span> <span class='st'>"double"</span>
+</code></pre>
+</div>
 </div>
 <h2 id="if-else-koşullu-durumları">if-else koşullu durumları</h2>
 <p>Koşullu durumlar programlamada çokça kullanılan, herhangi bir koşula
@@ -1595,53 +1640,103 @@ durumunu görelim.</p>
 yaşlarda olan kişiler için ‘Bu bir çift sayı değil!’ ifadesini
 bastır.”</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='va'>yas</span><span class='op'>)</span> <span class='op'>{</span>
+  <span class='kw'>if</span> <span class='op'>(</span><span class='va'>i</span> <span class='op'><a href='https://rdrr.io/r/base/Arithmetic.html'>%%</a></span> <span class='fl'>2</span> <span class='op'>==</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>i</span><span class='op'>)</span>
+  <span class='op'>}</span> <span class='kw'>else</span> <span class='op'>{</span>
+    <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='st'>"Bu bir çift sayı değil!"</span><span class='op'>)</span>
+  <span class='op'>}</span>
+<span class='op'>}</span>
+</code></pre>
+</div>
 </div>
 <p>Birden fazla “eğer şu ise…” koşulunu kontrol etmek mümkündür. Bu
 durumda ‘else if’ ifadesini kullanırız.</p>
-“‘yas’ vektöründeki çift yaşlarda olan kişilerin yaşlarını, üçe
+<p>“‘yas’ vektöründeki çift yaşlarda olan kişilerin yaşlarını, üçe
 bölünebilen yaşlar için ‘Bu üçe bölünebilen bir sayı’, kalan yaşlarda
 olan kişiler için ‘Bu çift ya da üçe bölünebilen bir sayı değil!’
-ifadesini bastır.”
+ifadesini bastır.”</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='va'>yas</span><span class='op'>)</span> <span class='op'>{</span>
+  <span class='kw'>if</span> <span class='op'>(</span><span class='va'>i</span> <span class='op'><a href='https://rdrr.io/r/base/Arithmetic.html'>%%</a></span> <span class='fl'>2</span> <span class='op'>==</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>i</span><span class='op'>)</span>
+  <span class='op'>}</span> <span class='kw'>else</span> <span class='kw'>if</span> <span class='op'>(</span><span class='va'>i</span> <span class='op'><a href='https://rdrr.io/r/base/Arithmetic.html'>%%</a></span> <span class='fl'>3</span> <span class='op'>==</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='st'>"Bu bir üçe bölünebilen bir sayı!"</span><span class='op'>)</span>
+  <span class='op'>}</span> <span class='kw'>else</span> <span class='op'>{</span>
+    <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='st'>"Bu çift ya da üçe bölünebilen bir sayı değil!"</span><span class='op'>)</span>
+  <span class='op'>}</span>
+<span class='op'>}</span>
+</code></pre>
+</div>
 </div>
 <h2 id="verinin-okunması">verinin okunması</h2>
 <p>Verimizi okutmak için önce verinin nerede olduğuna bakmamız
 gerekiyor. Dosyanın yerini bulduktan sonra R’a bu yeri tarif edebilir ve
 veriyi oradan çekebiliriz.</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span><span class='op'>(</span><span class='st'>"C:/Users/arify/Desktop/r_ile_veri_analizi"</span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <p>Şimdi verinin bulunduğu klasörden verilerimizi alalım.</p>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>bestsellers</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='st'>'./data/bestsellers_with_categories.csv'</span><span class='op'>)</span>
 
+<span class='va'>hdi</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='st'>'./data/human_development_index.csv'</span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <p>Alıştırma: En çok satan kitaplardan fiyatı 20 doların üzerinde
 olanların fiyatını bastıracak bir for döngüsü kuralım.</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>fiyat</span> <span class='op'>&lt;-</span> <span class='va'>bestsellers</span><span class='op'>$</span><span class='va'>Price</span>
+</code></pre>
+</div>
 </div>
 <h2 id="mutate-fonksiyonu">mutate fonksiyonu</h2>
 <p>Bir data frame’deki herhangi bir sütunda değişiklik yaparak yeni bir
 sütun oluşturmak için mutate fonksiyonunu kullanabiliriz.</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>bestsellers</span>
+</code></pre>
+</div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
 
+<span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span><span class='va'>bestsellers</span>, price_tl <span class='op'>=</span> <span class='va'>Price</span><span class='op'>*</span><span class='fl'>15.97</span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <p>Aynı işlemi pipe operatörü ile de gerçekleştirebiliriz. Pipe
 operatörü birden fazla fonksiyonu zincirleme bir şekilde kullanmamıza
 olanak sağlamaktadır.</p>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>bestsellers</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>price_tl <span class='op'>=</span> <span class='va'>Price</span><span class='op'>*</span><span class='fl'>15.97</span><span class='op'>)</span>
 
+<span class='va'>bestsellers</span>
+
+<span class='va'>hdi</span>
+</code></pre>
+</div>
 </div>
 <p>Data framemimiz neden değişmedi? Mutate fonksiyonu ile dataframe’de
 bir değişiklik yaptığımızda biz tekrar bir atama işlemi yapmadığımız
 takdirde dataframe değişmeyecektir.</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>bestsellers</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span><span class='va'>bestsellers</span>, price_tl <span class='op'>=</span> <span class='va'>Price</span><span class='op'>*</span><span class='fl'>15.97</span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <p>Alıştırma: “hdi” dataframe’ini kullanarak 2017 yılından 2019 yılına
 kadar olan sütunların ortalamalarını tek bir sütunda toplayalım. Sütun
@@ -1668,7 +1763,12 @@ sağlar.</p>
 <p>Yıl bazında satılan kitapların ortalama değerleri ve standard
 sapmaları:</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>bestsellers</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>Year</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>price_mean <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>Price</span><span class='op'>)</span>, price_df <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>Price</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <p>Alıştırma: “bestsellers” dataframe’inde her bir Genre’da en fazla ve
 en az Reviews’e sahip kitaplarını kaçar incelemeye sahip olduklarını

@@ -11,7 +11,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, eval= F)
+knitr::opts_chunk$set(eval= F)
 ```
 
 # Dplyr Paketi ile Veri Temizliği
@@ -33,31 +33,37 @@ X == Y
 
 "Ali" == "ali"
 ```
+
 "X ve Y eşit değil midir?"
 
 ```{r}
 X != Y
 ```
+
 "X, Y'den büyük müdür?"
 
 ```{r}
 X > Y
 ```
+
 "X, Y'den küçük müdür?"
 
 ```{r}
 X < Y
 ```
+
 "X, Y'ye eşit veya büyük müdür?"
 
 ```{r}
 X >= Y
 ```
+
 "X, Y'ye eşit veya küçük müdür?"
 
 ```{r}
 X <= Y
 ```
+
 Sadece tekil değerlerle değil, vektör gibi birden fazla elemana sahip veri yapılarıyla da mantıksal operatörler ile sorgu yapmak mümkündür.
 
 "Yaş verisindeki hangi değerler 3'ten büyüktür."
@@ -67,6 +73,7 @@ yas <-  c(1,3,8,9,14,15,19,22,38,50,100)
 
 yas > 3
 ```
+
 Bazen birden fazla karşılaştırma sonucunu aynı anda elde etmemiz gerekebilir. Bu durumlarda "ve", "veya", "değil" gibi operatörlere ihtiyaç doğmaktadır.
 
 "18 ve 18 yaşından büyük ve 60 yaşından küçük kimseler kimlerdir?"
@@ -74,22 +81,27 @@ Bazen birden fazla karşılaştırma sonucunu aynı anda elde etmemiz gerekebili
 ```{r}
 yas >= 18 & yas < 60
 ```
+
 Şimdi de sadece çocuklara özel bir program için yaş sınırlarını koyalım. 3 yaş ve altı bu programa katılamasın.
 
 Alıştırma: "3 yaşından büyük ve 18 yaşından küçük kişiler kimlerdir?"
+
 ```{r}
 
 ```
+
 "8 yaşından küçük veya 45 yaşından büyük kişiler kimlerdir?"
 
 ```{r}
 yas < 8 | yas > 45
 ```
+
 "8 yaşından büyük veya 45 yaşından küçük olmayan kişiler kimlerdir?"
 
 ```{r}
 !(yas > 8) | !(yas < 45)
 ```
+
 Tek bir değer üzerinden de birden fazla karşılaştırma yapmak mümkündür.
 
 "X'in tipi "character"dir ve X "elma" ya eşittir."
@@ -120,9 +132,11 @@ for (i in yas) {
   }
 }
 ```
+
 Birden fazla "eğer şu ise..." koşulunu kontrol etmek mümkündür. Bu durumda 'else if' ifadesini kullanırız.
 
 "'yas' vektöründeki çift yaşlarda olan kişilerin yaşlarını, üçe bölünebilen yaşlar için 'Bu üçe bölünebilen bir sayı', kalan yaşlarda olan kişiler için 'Bu çift ya da üçe bölünebilen bir sayı değil!' ifadesini bastır."
+
 ```{r}
 for (i in yas) {
   if (i %% 2 == 0) {
@@ -183,6 +197,7 @@ bestsellers
 
 hdi
 ```
+
 Data framemimiz neden değişmedi? Mutate fonksiyonu ile dataframe'de bir değişiklik yaptığımızda biz tekrar bir atama işlemi yapmadığımız takdirde dataframe değişmeyecektir.
 
 ```{r}
@@ -215,6 +230,7 @@ bestsellers %>%
   group_by(Year) %>% 
   summarize(price_mean = mean(Price), price_df = sd(Price))
 ```
+
 Alıştırma: "bestsellers" dataframe'inde her bir Genre'da en fazla ve en az Reviews'e sahip kitaplarını kaçar incelemeye sahip olduklarını summarize fonksiyonu ile bulalım.
 
 ```{r}
