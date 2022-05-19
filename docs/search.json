@@ -5,21 +5,21 @@
       "title": "Site Hakkında",
       "author": [],
       "contents": "\r\ndigitalottomanstudies.com tarafından düzenlenen R ile Veri Analizi\r\nAtolyesi için hazırlanmıştır.\r\nArif Yasin Kavdır & Yusuf Akbulut\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-05-19T08:46:25+03:00"
+      "last_modified": "2022-05-19T11:27:19+03:00"
     },
     {
       "path": "dersler.html",
       "title": "R ile Veri Analizi Atölyesi",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-05-19T08:46:26+03:00"
+      "last_modified": "2022-05-19T11:27:20+03:00"
     },
     {
       "path": "index.html",
       "title": "R ile Veri Analizi Atölyesi",
       "author": [],
       "contents": "\r\n\r\nContents\r\nDers İçeriği\r\n1.Hafta\r\nProgramlamaya Giriş ve\r\nR\r\nVeri Yapıları ve\r\nDöngüler\r\nDplyr Paketi ve Döngüler\r\n\r\n2. Hafta\r\nDplyr Paketi ile Veri\r\nTemizliği\r\nGgplot Paketi ile\r\nGörselleştirme\r\nTarih, saat ve mekan verisi\r\nRegex ve StringR\r\nPaketi ile Metin İşleme\r\n\r\n\r\n\r\nDers İçeriği\r\nDers Kaynağı: https://r4ds.had.co.nz/\r\n1.Hafta\r\nProgramlamaya\r\nGiriş ve R\r\n11 Mayıs Çarşamba : 20.00-22.00\r\nProgramlama dilleri ve mantığı\r\nArayüz vs. Kod\r\nNeden R\r\nR vs. Python\r\nRstudio kullanımı\r\nRmarkdown\r\nKütüphane kullanımı\r\nKaggle tanıtımı\r\nÖdev:\r\nKurulumların kişisel bilgisayarlarda\r\ntamamlanması\r\nKaggle’dan ya da farklı kaynaklardan ders boyu kullanılacak\r\nverinin seçilip onaylatılması\r\nVeri\r\nYapıları ve Döngüler\r\n14 Mayıs Cumartesi: 14.00-16.00\r\nVeri yapıları\r\nDeğişken ve opertörler\r\nVektör, Liste ve DataFrame\r\nVeri alt kümelerine ulaşım\r\n%>%\r\nVeri okuma ve yazma\r\nÖdev:\r\nKendi veriniz üzerinden derste gösterilen fonsksiyonların\r\nuygulaması\r\nDplyr Paketi ve Döngüler\r\n15 Mayıs Pazar : 14.00-16.00\r\nFor döngüsü\r\nWhile döngüsü\r\nFonksiyonlar\r\nselect fonksiyonu\r\nfilter fonksiyonu\r\narange fonksiyonu\r\nÖdev:\r\nKendi veriniz üzerinden derste gösterilen fonsksiyonların\r\nuygulaması\r\n2. Hafta\r\nDplyr Paketi ile Veri\r\nTemizliği\r\n18 Mayıs Çarşamba : 19.00-21.00\r\nmutate fonksiyonu\r\nsummarize fonksiyonu\r\ncount fonksiyonu\r\ncase_when fonksiyonu\r\npivot_longer fonksiyonu\r\npivot_wider fonksiyonu\r\nÖdev:\r\nKendi veriniz üzerinden derste gösterilen fonsksiyonların\r\nuygulaması\r\nGgplot Paketi ile\r\nGörselleştirme\r\n20 Mayıs Cuma : 19.00-21.00\r\nGrafik grameri\r\nVeri tipi görselleştirme ilişkisi\r\nÇeşitli görselleştirme türleri\r\nGrafik özelleştirme\r\nÖdev\r\nKendi veriniz üzerinden 2 farklı görselleştirme\r\nyapılması\r\nTarih, saat ve mekan verisi\r\n21 Mayıs Cumartesi : 14.00-17.00\r\nLubridate paketi\r\nLeaflet paketi\r\nÖdev\r\nKendi verinizi kullanarak paketlerden en az birini kullanarak\r\nbir analiz ya da görselleştirme yapılması\r\nRegex ve StringR\r\nPaketi ile Metin İşleme\r\n22 Mayıs Pazar : 14.00-17.00\r\nRegex\r\nStringR ile metin işleme\r\nTemel metin analizi fonsksiyonları\r\nÖdev\r\nKendi verinizi kullanarak paketlerden en az birini kullanarak\r\nbir analiz yapılması\r\nBitirme Ödevi\r\nSeçilen veri üzerinden bir araştırma sorusu ile kısa bir blog\r\nyazısının yazılması\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-05-19T08:46:27+03:00"
+      "last_modified": "2022-05-19T11:27:21+03:00"
     }
   ],
   "collections": ["posts/posts.json"]

@@ -1,0 +1,226 @@
+---
+title: "4. Ders - Dplyr Devam"
+author: [Arif Yasin Kavdır]
+date: 2022-05-19
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+    toc_float: true
+    toc_depth: 5
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval= F)
+```
+
+# Dplyr Paketi ile Veri Temizliği
+18 Mayıs Çarşamba : 19.00-21.00
+
+## ilişkisel ve mantıksal operatörler
+
+### İki veriyi nasıl karşılaştıracağız?
+
+Hem R'da hem de diğer programlama dillerinde ilişkisel operatörler sıkça kullanılmaktadır. Bu operatörler kullanıldıkları karşılaştırmaların doğru olup olmadığını kontrol bize söylerler. İkinci derste de değindiğimiz gibi aşağıdaki örneklerde bu operatörlerin neler olduğunu görebilirsiniz.
+
+"X ve Y eşit midir?", "'Ali' ile 'ali' eşit midir?"
+
+```{r}
+X <- 10
+Y <- 12
+
+X == Y
+
+"Ali" == "ali"
+```
+"X ve Y eşit değil midir?"
+
+```{r}
+X != Y
+```
+"X, Y'den büyük müdür?"
+
+```{r}
+X > Y
+```
+"X, Y'den küçük müdür?"
+
+```{r}
+X < Y
+```
+"X, Y'ye eşit veya büyük müdür?"
+
+```{r}
+X >= Y
+```
+"X, Y'ye eşit veya küçük müdür?"
+
+```{r}
+X <= Y
+```
+Sadece tekil değerlerle değil, vektör gibi birden fazla elemana sahip veri yapılarıyla da mantıksal operatörler ile sorgu yapmak mümkündür.
+
+"Yaş verisindeki hangi değerler 3'ten büyüktür."
+
+```{r}
+yas <-  c(1,3,8,9,14,15,19,22,38,50,100)
+
+yas > 3
+```
+Bazen birden fazla karşılaştırma sonucunu aynı anda elde etmemiz gerekebilir. Bu durumlarda "ve", "veya", "değil" gibi operatörlere ihtiyaç doğmaktadır.
+
+"18 ve 18 yaşından büyük ve 60 yaşından küçük kimseler kimlerdir?"
+
+```{r}
+yas >= 18 & yas < 60
+```
+Şimdi de sadece çocuklara özel bir program için yaş sınırlarını koyalım. 3 yaş ve altı bu programa katılamasın.
+
+Alıştırma: "3 yaşından büyük ve 18 yaşından küçük kişiler kimlerdir?"
+```{r}
+
+```
+"8 yaşından küçük veya 45 yaşından büyük kişiler kimlerdir?"
+
+```{r}
+yas < 8 | yas > 45
+```
+"8 yaşından büyük veya 45 yaşından küçük olmayan kişiler kimlerdir?"
+
+```{r}
+!(yas > 8) | !(yas < 45)
+```
+Tek bir değer üzerinden de birden fazla karşılaştırma yapmak mümkündür.
+
+"X'in tipi "character"dir ve X "elma" ya eşittir."
+"X'in tipi "double"dır ya da "elma" ya eşittir."
+
+```{r}
+X <- "elma"
+
+X == "elma" & typeof(X) == "character"
+
+X == "elma" | typeof(X) == "double"
+```
+
+## if-else koşullu durumları
+
+Koşullu durumlar programlamada çokça kullanılan, herhangi bir koşula bağlı olarak programın nasıl bir çıktı vereceğine karar verebildiğimiz ifade tarzlarıdır. "Eğer şu durumla karşılaşırsan şunu yap karşılaşmazsan bunu yap." gibi.
+
+Aşağıdaki örnekte hem for döngüsünü hatırlayalım hem de if-else durumunu görelim.
+
+"'yas' vektöründeki çift yaşlarda olan kişilerin yaşlarını, tek yaşlarda olan kişiler için 'Bu bir çift sayı değil!' ifadesini bastır."
+
+```{r}
+for (i in yas) {
+  if (i %% 2 == 0) {
+    print(i)
+  } else {
+    print("Bu bir çift sayı değil!")
+  }
+}
+```
+Birden fazla "eğer şu ise..." koşulunu kontrol etmek mümkündür. Bu durumda 'else if' ifadesini kullanırız.
+
+"'yas' vektöründeki çift yaşlarda olan kişilerin yaşlarını, üçe bölünebilen yaşlar için 'Bu üçe bölünebilen bir sayı', kalan yaşlarda olan kişiler için 'Bu çift ya da üçe bölünebilen bir sayı değil!' ifadesini bastır."
+```{r}
+for (i in yas) {
+  if (i %% 2 == 0) {
+    print(i)
+  } else if (i %% 3 == 0) {
+    print("Bu bir üçe bölünebilen bir sayı!")
+  } else {
+    print("Bu çift ya da üçe bölünebilen bir sayı değil!")
+  }
+}
+```
+
+## verinin okunması
+
+Verimizi okutmak için önce verinin nerede olduğuna bakmamız gerekiyor. Dosyanın yerini bulduktan sonra R'a bu yeri tarif edebilir ve veriyi oradan çekebiliriz.
+
+```{r}
+setwd("C:/Users/arify/Desktop/r_ile_veri_analizi")
+```
+
+Şimdi verinin bulunduğu klasörden verilerimizi alalım.
+
+```{r}
+bestsellers <- read.csv('./data/bestsellers_with_categories.csv')
+
+hdi <- read.csv('./data/human_development_index.csv')
+```
+
+Alıştırma: En çok satan kitaplardan fiyatı 20 doların üzerinde olanların fiyatını bastıracak bir for döngüsü kuralım.
+
+```{r}
+fiyat <- bestsellers$Price
+```
+
+## mutate fonksiyonu
+
+Bir data frame'deki herhangi bir sütunda değişiklik yaparak yeni bir sütun oluşturmak için mutate fonksiyonunu kullanabiliriz.
+
+```{r}
+bestsellers
+```
+
+
+
+```{r}
+library(tidyverse)
+
+mutate(bestsellers, price_tl = Price*15.97)
+```
+
+Aynı işlemi pipe operatörü ile de gerçekleştirebiliriz. Pipe operatörü birden fazla fonksiyonu zincirleme bir şekilde kullanmamıza olanak sağlamaktadır.
+
+```{r}
+bestsellers %>% 
+  mutate(price_tl = Price*15.97)
+
+bestsellers
+
+hdi
+```
+Data framemimiz neden değişmedi? Mutate fonksiyonu ile dataframe'de bir değişiklik yaptığımızda biz tekrar bir atama işlemi yapmadığımız takdirde dataframe değişmeyecektir.
+
+```{r}
+bestsellers <- mutate(bestsellers, price_tl = Price*15.97)
+```
+
+Alıştırma: "hdi" dataframe'ini kullanarak 2017 yılından 2019 yılına kadar olan sütunların ortalamalarını tek bir sütunda toplayalım. Sütun ismi "X17_19" olsun. Bu sütunun eklendiği haliyle "hdi"yi güncelleyelim.
+
+```{r}
+
+```
+
+Aynı işlemi 1997,1998 ve 1999 sütunlarında yapmaya çalışsaydık yapabilir miydik? Neden? Bu sorunu düzeltmek için ne yapılabilirdi?
+
+```{r}
+
+```
+
+
+## group_by ve summarize fonksiyonları
+
+Peki ben gruplar üzerinden bir işlem yapmak istersem ne yapacağım? Mesela her yıl için satılan kitapların ortalama değerlerini hesaplamak istesem ne yapmam lazım? 
+
+Burada group_by ve summarize fonksiyonları devreye girmektedir. "group_by()" fonksiyonu bir dataframe'deki herhangi bir sütunda bulunan kategorik bilgiye göre veriyi sınıflandırırken, "summarize()" fonksiyonu bu grouplardan istediğimiz hesaplamaları yaparak bir sonuç bulmamızı sağlar.
+
+Yıl bazında satılan kitapların ortalama değerleri ve standard sapmaları:
+
+```{r}
+bestsellers %>% 
+  group_by(Year) %>% 
+  summarize(price_mean = mean(Price), price_df = sd(Price))
+```
+Alıştırma: "bestsellers" dataframe'inde her bir Genre'da en fazla ve en az Reviews'e sahip kitaplarını kaçar incelemeye sahip olduklarını summarize fonksiyonu ile bulalım.
+
+```{r}
+
+```
+
+## Veri formatları
+
+Uzun ve geniş veri formatları arasında geçiş yapmak bazı durumlarda kaçınılmazdır. Bu formatların neler olduğuna bir s derste teorik olarak değineceğiz.
