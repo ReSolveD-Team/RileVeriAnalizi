@@ -87,35 +87,37 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-<title>R ile Veri Analizi Atölyesi: 2. Ders - Veri Yapıları</title>
+<title>R ile Veri Analizi Atölyesi: Kurulumlar ve Giriş</title>
 
+<meta property="description" itemprop="description" content="R ile veri analizi için giriş dersi"/>
 
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2022-05-14"/>
-<meta property="article:created" itemprop="dateCreated" content="2022-05-14"/>
-<meta name="article:author" content="Arif Yasin Kavdır"/>
+<meta property="article:published" itemprop="datePublished" content="2022-05-11"/>
+<meta property="article:created" itemprop="dateCreated" content="2022-05-11"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="R ile Veri Analizi Atölyesi: 2. Ders - Veri Yapıları"/>
+<meta property="og:title" content="R ile Veri Analizi Atölyesi: Kurulumlar ve Giriş"/>
 <meta property="og:type" content="article"/>
+<meta property="og:description" content="R ile veri analizi için giriş dersi"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="R ile Veri Analizi Atölyesi"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary"/>
-<meta property="twitter:title" content="R ile Veri Analizi Atölyesi: 2. Ders - Veri Yapıları"/>
+<meta property="twitter:title" content="R ile Veri Analizi Atölyesi: Kurulumlar ve Giriş"/>
+<meta property="twitter:description" content="R ile veri analizi için giriş dersi"/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["2. Ders - Veri Yapıları"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Arif Yasin Kavdır"]}]}]},{"type":"character","attributes":{},"value":["2022-05-14"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_float","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[5]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Kurulumlar ve Giriş"]},{"type":"character","attributes":{},"value":["R ile veri analizi için giriş dersi"]},{"type":"character","attributes":{},"value":["05-11-2022"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["ikinciders_files/anchor-4.2.2/anchor.min.js","ikinciders_files/bowser-1.9.3/bowser.min.js","ikinciders_files/distill-2.2.21/template.v2.js","ikinciders_files/header-attrs-2.14/header-attrs.js","ikinciders_files/jquery-3.6.0/jquery-3.6.0.js","ikinciders_files/jquery-3.6.0/jquery-3.6.0.min.js","ikinciders_files/jquery-3.6.0/jquery-3.6.0.min.map","ikinciders_files/popper-2.6.0/popper.min.js","ikinciders_files/tippy-6.2.7/tippy-bundle.umd.min.js","ikinciders_files/tippy-6.2.7/tippy-light-border.css","ikinciders_files/tippy-6.2.7/tippy.css","ikinciders_files/tippy-6.2.7/tippy.umd.min.js","ikinciders_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["welcome_files/anchor-4.2.2/anchor.min.js","welcome_files/bowser-1.9.3/bowser.min.js","welcome_files/distill-2.2.21/template.v2.js","welcome_files/header-attrs-2.14/header-attrs.js","welcome_files/jquery-3.6.0/jquery-3.6.0.js","welcome_files/jquery-3.6.0/jquery-3.6.0.min.js","welcome_files/jquery-3.6.0/jquery-3.6.0.min.map","welcome_files/popper-2.6.0/popper.min.js","welcome_files/tippy-6.2.7/tippy-bundle.umd.min.js","welcome_files/tippy-6.2.7/tippy-light-border.css","welcome_files/tippy-6.2.7/tippy.css","welcome_files/tippy-6.2.7/tippy.umd.min.js","welcome_files/vembedr-0.1.5/css/vembedr.css","welcome_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2043,6 +2045,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!--/radix_placeholder_distill-->
   <script src="../../site_libs/header-attrs-2.14/header-attrs.js"></script>
+  <link href="../../site_libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
   <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2063,7 +2066,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"2. Ders - Veri Yapıları","authors":[{"author":"Arif Yasin Kavdır","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-05-14T00:00:00.000+03:00","citationText":"Kavdır, 2022"}
+{"title":"Kurulumlar ve Giriş","description":"R ile veri analizi için giriş dersi","authors":[],"publishedDate":"2022-05-11T00:00:00.000+03:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2087,463 +2090,22 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>2. Ders - Veri Yapıları</h1>
+<h1>Kurulumlar ve Giriş</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-
+<p><p>R ile veri analizi için giriş dersi</p></p>
 </div>
 
-<div class="d-byline">
-  
-  Arif Yasin Kavdır
-  
-<br/>2022-05-14
-</div>
 
 <div class="d-article">
-<div class="d-contents d-contents-float">
-<nav class="l-text toc figcaption" id="TOC">
-<h3>Contents</h3>
-<ul>
-<li><a href="#console-ve-kod-çalıştırma"
-id="toc-console-ve-kod-çalıştırma">Console ve kod çalıştırma</a></li>
-<li><a href="#değişken-nedir" id="toc-değişken-nedir">Değişken
-nedir?</a></li>
-<li><a href="#operatörler" id="toc-operatörler">Operatörler</a>
-<ul>
-<li><a href="#mantıksal-operatörler"
-id="toc-mantıksal-operatörler">Mantıksal Operatörler</a></li>
-</ul></li>
-<li><a href="#veri-tipleri" id="toc-veri-tipleri">Veri tipleri</a></li>
-<li><a href="#vektör-dataframe-ve-liste"
-id="toc-vektör-dataframe-ve-liste">Vektör, DataFrame ve Liste</a>
-<ul>
-<li><a href="#vektörler" id="toc-vektörler">Vektörler</a></li>
-<li><a href="#dataframe" id="toc-dataframe">Dataframe</a></li>
-<li><a href="#liste-ve-veri-alt-kümelerine-ulaşım"
-id="toc-liste-ve-veri-alt-kümelerine-ulaşım">Liste ve Veri alt
-kümelerine ulaşım</a></li>
-</ul></li>
-<li><a href="#section" id="toc-section">%&gt;%</a></li>
-<li><a href="#veri-okuma-ve-yazma" id="toc-veri-okuma-ve-yazma">Veri
-okuma ve yazma</a></li>
-</ul>
-</nav>
-</div>
-<p>Bu derste kullanılan veriye <a
-href="https://www.kaggle.com/datasets/kuchhbhi/cpga-iq-placement">linkinden</a>
-ulaşabilirsiniz.</p>
-<p>R cheatsheetleri için bu <a
-href="https://www.rstudio.com/resources/cheatsheets/">linki</a>
-kullanabilirsiniz.</p>
-<h1 id="console-ve-kod-çalıştırma">Console ve kod çalıştırma</h1>
-<h1 id="değişken-nedir">Değişken nedir?</h1>
-<ul>
-<li>Kahve örneği</li>
-</ul>
-<p>Değişkene bir değer atamak için “&lt;-” ifadesi kullanılır.
-Windows’ta “Alt” + “-” tuşlarına Mac içinse “Option” + “-” tuşlarına
-aynı anda basarak bu ifadeyi koyabilirsiniz. Aynı zamanda “&lt;” ve “-”
-karakterlerini ayrı ayrı da yazabilirsiniz.</p>
+<p>Aşağıdaki videoda kurulum için gerekli bilgileri bulabilirsiniz. Aynı
+adınları Mac için de takip ettiğinizde sorun olmayacağını düşünüyoruz.
+Karşılaştığınız sorunları grup üzerinden direk bize iletebilirsiniz.</p>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>cay_kasigi</span> <span class='op'>&lt;-</span> <span class='st'>"kahve"</span>
-
-<span class='va'>seker_kasigi</span> <span class='op'>&lt;-</span> <span class='st'>"şeker"</span>
-
-<span class='va'>bardak</span> <span class='op'>&lt;-</span> <span class='st'>"süt"</span>
-</code></pre>
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/2hz2gpMNAeQ" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
-</div>
-<p>Bu fonksiyon kurgusunu şimdi anlamanıza gerek bulunmamaktadır. İlerki
-derslerde fonksiyon yapılarına daha detaylı bakacağız.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>kahve_makinesi</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>a</span>,<span class='va'>b</span>,<span class='va'>c</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='va'>c</span>,<span class='st'>"lü "</span>, <span class='st'>"ve "</span>, <span class='va'>b</span>, <span class='st'>"li "</span>, <span class='va'>a</span><span class='op'>)</span>
-<span class='op'>}</span>
-</code></pre>
-</div>
-</div>
-<p>Bir fonksiyonun çıktısı bir değişkene atanabilir. Fonksiyonların
-içerisinde değişkenler kullanılabilir.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>kahve_makinesi</span><span class='op'>(</span><span class='va'>cay_kasigi</span>, <span class='va'>seker_kasigi</span>,<span class='va'>bardak</span><span class='op'>)</span>
-
-<span class='va'>kupa</span> <span class='op'>&lt;-</span> <span class='fu'>kahve_makinesi</span><span class='op'>(</span><span class='va'>cay_kasigi</span>, <span class='va'>seker_kasigi</span>,<span class='va'>bardak</span><span class='op'>)</span>
-
-<span class='va'>kupa</span>
-</code></pre>
-</div>
-</div>
-<h1 id="operatörler">Operatörler</h1>
-<p>Toplama, çıkarma, bölme ve çarpma operatörleri hem sayılarla hem de
-numeric değişkenlerle kullanılabilir.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fl'>50</span> <span class='op'>+</span> <span class='fl'>10</span>
-
-<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fl'>50</span>
-<span class='va'>y</span> <span class='op'>&lt;-</span> <span class='fl'>10</span>
-
-<span class='va'>x</span> <span class='op'>+</span> <span class='va'>y</span>
-
-<span class='va'>x</span> <span class='op'>-</span> <span class='va'>y</span>
-
-<span class='va'>x</span> <span class='op'>/</span> <span class='va'>y</span>
-
-<span class='va'>x</span> <span class='op'>*</span> <span class='va'>y</span>
-</code></pre>
-</div>
-</div>
-<p>“**” ifadesiyle bir değerin karesi alınabilir.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>x</span> <span class='op'>**</span> <span class='fl'>2</span>
-</code></pre>
-</div>
-</div>
-<p>“**” ifadesiyle 0.5’in karesini almak değerin kare kökünü verir.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>x</span> <span class='op'>**</span> <span class='op'>(</span><span class='fl'>0.5</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<p>Bir değişkenin değeri sonradan değiştirilebilir.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>y</span> <span class='op'>&lt;-</span> <span class='fl'>9</span>
-</code></pre>
-</div>
-</div>
-<p>“%%” ifadesi bir sayının diğerine bölümünden kalanı verirken “%/%”
-ifadesi kalansız bölümü vermektedir.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>x</span> <span class='op'><a href='https://rdrr.io/r/base/Arithmetic.html'>%%</a></span> <span class='va'>y</span>
-
-<span class='va'>x</span> <span class='op'><a href='https://rdrr.io/r/base/Arithmetic.html'>%/%</a></span> <span class='va'>y</span>
-</code></pre>
-</div>
-</div>
-<h2 id="mantıksal-operatörler">Mantıksal Operatörler</h2>
-<p>“==” mantıksal operatörü iki değerin birbirine eşit olup olmadığını
-kontrol eder. TRUE sonucu almak iki değerin eşit kabul edildiğini
-gösterirken FALSE sonucu almak iki değerin eşit kabul edilmediğini
-gösterir.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fl'>1</span> <span class='op'>==</span> <span class='fl'>1</span>
-
-<span class='st'>"Ahmet"</span> <span class='op'>==</span> <span class='st'>"Ahmet"</span>
-
-<span class='st'>"Ahmet"</span> <span class='op'>==</span> <span class='fl'>1</span>
-</code></pre>
-</div>
-</div>
-<p>“&gt;” mantıksal operatörü ilk değerin ikinci değerden büyük olup
-olmadığına bakarken “&lt;” mantıksal operatörü ilk değerin ikinci
-değerden küçük olup olmadığını kontrol eder.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fl'>1</span> <span class='op'>&gt;</span> <span class='fl'>0</span>
-
-<span class='fl'>1</span> <span class='op'>&lt;</span> <span class='fl'>0</span>
-</code></pre>
-</div>
-</div>
-<p>“&gt;=” mantıksal operatörü ilk değerin ikinci değerden büyük ya da
-eşit olup olmadığına bakarken “&lt;” mantıksal operatörü ilk değerin
-ikinci değerden küçük ya da eşit olup olmadığını kontrol eder.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fl'>1</span> <span class='op'>&lt;=</span> <span class='fl'>0</span>
-
-<span class='fl'>1</span> <span class='op'>&gt;=</span> <span class='fl'>0</span>
-</code></pre>
-</div>
-</div>
-<h1 id="veri-tipleri">Veri tipleri</h1>
-<p>character, numeric/double, logical</p>
-<p>İki tırnak arasında gösterilen karaterler “character” veri
-tipindedirler.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='st'>"şeker"</span><span class='op'>)</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='st'>"40"</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<p>Küsuratlı ya da küsuratsız sayılar “double” veri tipindedirler.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='fl'>3</span><span class='op'>)</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='fl'>3.3</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<p>TRUE, FALSE ve NA “logical” veri tipindedirler. TRUE ve FALSE, T ve F
-şeklinde de yazılabilirler. Bu iki kullanım dışında bir kullanım
-yoktur.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='cn'>TRUE</span><span class='op'>)</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='cn'>NA</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<p>Veri dönüşümü yapmak için “as.numeric”, “as.character” ve
-“as.logical” gibi fonksiyonlar kullanılabilir. Bu fonksiyonlar sadece
-veriler dönüştürülebilir oldukları zaman işe yararlar. Yani 4 sayısı
-tırnak işareti ile “4” olduğu zaman character olurken, tırnaklar
-kalkınca numeric/double olarak kabul edilmektedir. Bu nedenle “4”, 4’e
-dönüştürülebilir. Ama “dört” yazısından tırnaklar kalksa da numeric bir
-ifade alınamamaktadır. Bu nedenle dönüşüm yapılamaz ve sonuç olarak NA
-alınır.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>dort</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='st'>"4"</span><span class='op'>)</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>dort</span><span class='op'>)</span>
-
-<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span><span class='op'>(</span><span class='fl'>453</span><span class='op'>)</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='st'>"dört"</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<p>Logical veriler numeric hale geldikleri zaman TRUE için 1, FALSE için
-0 çıktısı alınır. Karaktere dönüştürüldükleri zaman ise yazıya tırnak
-eklenerek character olurlar. “FALSE” ya da “TRUE” gibi.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span><span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<h1 id="vektör-dataframe-ve-liste">Vektör, DataFrame ve Liste</h1>
-<h2 id="vektörler">Vektörler</h2>
-<p>Birden fazla değeri tek bir değişkende tutmak için kullanılan tek
-boyutlu değişkenlerden bir tanesi vektörlerdir ve c() fonksiyonu ile
-oluşturulurlar.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>vektor</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>2</span>,<span class='fl'>3</span><span class='op'>)</span>
-
-<span class='va'>vektor</span>
-</code></pre>
-</div>
-</div>
-<p>Vektörlerin veri tipi içersindeki elemanların veri tipi ile
-aynıdır.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>vektor</span><span class='op'>)</span>
-
-<span class='va'>vektor</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>TRUE</span>,<span class='cn'>FALSE</span>,<span class='cn'>TRUE</span><span class='op'>)</span>
-
-<span class='va'>vektor</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>vektor</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<p>Eğer içerisindeki elemanların hepsi aynı veri tipinden değilse şu
-şekilde dönüşümler olur: Numeric/double ve logical veri tipleri, eğer
-vektör içinde bir character varsa character veri tipine dönüşürler.
-Logical veri tipi eğer vektör içinde bir numeric/double varsa
-numeric/double veri tipine dönüşür.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>vektor</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"4"</span>, <span class='fl'>1</span>, <span class='fl'>2</span><span class='op'>)</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>vektor</span><span class='op'>)</span>
-
-<span class='va'>vektor</span>
-
-<span class='va'>vektor</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>TRUE</span>,<span class='cn'>FALSE</span>,<span class='fl'>5</span><span class='op'>)</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>vektor</span><span class='op'>)</span>
-
-<span class='va'>vektor</span>
-
-<span class='va'>vektor</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>TRUE</span>,<span class='cn'>FALSE</span>,<span class='st'>"5"</span><span class='op'>)</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>vektor</span><span class='op'>)</span>
-
-<span class='va'>vektor</span>
-</code></pre>
-</div>
-</div>
-<p>Bir veri tipini dönüşemeyeceği bir forma sokmaya çalışırsak “NA”
-sonucu alırız.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>vektor</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>TRUE</span>,<span class='cn'>FALSE</span>,<span class='fu'><a href='https://rdrr.io/r/base/logical.html'>as.logical</a></span><span class='op'>(</span><span class='st'>"5"</span><span class='op'>)</span><span class='op'>)</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>vektor</span><span class='op'>)</span>
-
-<span class='va'>vektor</span>
-</code></pre>
-</div>
-</div>
-<h2 id="dataframe">Dataframe</h2>
-<p>Dataframeler tabular veriyi tanımlamak için kullanılırlar ve satır ve
-sütunlardan oluşurlar. Bir dataframe oluşturmak için data.frame()
-fonksiyonu kullanılır. Aşağıdaki örnekte olduğu gibi sütun isimleri
-yazılarak, sütunları oluşturan vektörler bu isimlere atanır.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>isim</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"ahmet"</span>, <span class='st'>"selin"</span>, <span class='st'>"hüseyin"</span>, <span class='st'>"ayşe"</span><span class='op'>)</span>
-
-<span class='va'>df</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>isimler <span class='op'>=</span> <span class='va'>isim</span>, notlar <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>30</span>,<span class='fl'>25</span>,<span class='fl'>15</span>,<span class='fl'>40</span><span class='op'>)</span><span class='op'>)</span>
-
-<span class='va'>df</span>
-</code></pre>
-</div>
-</div>
-<p>Her bir sütunun içerisindeki vektörün tipi yukarıda anlatılan vektör
-tipi kuralları içerisinde belirlenir. Mesela bir character bulunan
-sütunlarda diğer tüm elemanlar sayı da olsa vektörün veri tipi,
-dolayısıyla kalan tüm elemanlar karaktere dönüşür. Ya da bir double
-verinin bulunduğu sütunlardaki logical veriler double’a dönüşür.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>isimler <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"ahmet"</span>, <span class='st'>"selin"</span>, <span class='st'>"hüseyin"</span>, <span class='st'>"ayşe"</span><span class='op'>)</span>, notlar <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>30</span>,<span class='fl'>25</span>,<span class='fl'>50</span>,<span class='st'>"40"</span><span class='op'>)</span><span class='op'>)</span>
-
-<span class='va'>df2</span>
-
-<span class='va'>df3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>isimler <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"ahmet"</span>, <span class='st'>"selin"</span>, <span class='st'>"hüseyin"</span>, <span class='st'>"ayşe"</span><span class='op'>)</span>, notlar <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>30</span>,<span class='fl'>25</span>,<span class='fl'>50</span>,<span class='fl'>40</span><span class='op'>)</span>, devamsılık <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='cn'>T</span>,<span class='cn'>F</span>,<span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span>
-
-<span class='va'>df3</span>
-</code></pre>
-</div>
-</div>
-<h2 id="liste-ve-veri-alt-kümelerine-ulaşım">Liste ve Veri alt
-kümelerine ulaşım</h2>
-<p>list: Bir liste oluşturmak için kullanılan fonksiyon</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>liste</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>T</span>,<span class='cn'>T</span>,<span class='cn'>F</span>,<span class='cn'>T</span><span class='op'>)</span>, <span class='fl'>4</span>, <span class='st'>"ahmet"</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<p>Listenin veri tipi “list” dir.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>liste</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<p>Liste ve vektörlerin elemanlarına ulaşmak için köşeli parantezler
-“[]” kullanılır. Aşağıdaki ilk satırdaki kod listenin ikinci elemanına
-ulaşmaktadır. İkinci satırdaki kod ise vektörün ilk elemanına
-ulaşmaktadır.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>liste</span><span class='op'>[</span><span class='fl'>2</span><span class='op'>]</span>
-
-<span class='va'>vektor</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span>
-</code></pre>
-</div>
-</div>
-<p>Tek köşeli parantez “[]” ilk elemana ulaşmakla birlikte, vektöre
-ulaşamaz. Vektöre ulaşmak için iki köşeli parantez “[[]]” kullanmak
-gerekir.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>ilk_eleman</span> <span class='op'>&lt;-</span> <span class='va'>liste</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>ilk_eleman</span><span class='op'>)</span>
-
-<span class='va'>ilk_eleman</span> <span class='op'>&lt;-</span> <span class='va'>liste</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>ilk_eleman</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<p>Köşeli parantezlerle dataframe’lerin sütunlarına da ulaşılabilir. Tek
-köşeli parantez kullanıldığı zaman görsel çıktı olarak sütun kod
-bloğunun altında gözükür. Veri tipi olarak ise “list” tipindedir.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df3</span><span class='op'>[</span><span class='st'>"isimler"</span><span class='op'>]</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>df3</span><span class='op'>[</span><span class='st'>"isimler"</span><span class='op'>]</span><span class='op'>)</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>df</span><span class='op'>$</span><span class='va'>isimler</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<p>İki köşeli parantez kullanıldığı zaman ise sütunu oluşturan vektöre
-ulaşılabilir.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df3</span><span class='op'>[[</span><span class='st'>"isimler"</span><span class='op'>]</span><span class='op'>]</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/typeof.html'>typeof</a></span><span class='op'>(</span><span class='va'>df3</span><span class='op'>[[</span><span class='st'>"isimler"</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<p>Köşeli parantezler yerine dolar işareti kullanarak da sütunu
-oluşturan vektöre ulaşmak mümkündür.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df3</span><span class='op'>$</span><span class='va'>isimler</span>
-
-<span class='va'>df3</span><span class='op'>$</span><span class='va'>isimler</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>]</span>
-</code></pre>
-</div>
-</div>
-<h1 id="section">%&gt;%</h1>
-<h1 id="veri-okuma-ve-yazma">Veri okuma ve yazma</h1>
-<p>read.csv: Bir veri dosyasını r ortamına aktarabilmek için
-kullanılacak fonksiyon</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_iq</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='st'>"./data/student_clustering.csv"</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<p>max: Bir vektördeki maksimum sayıyı bulan fonksiyon</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span><span class='op'>(</span><span class='va'>df_iq</span><span class='op'>$</span><span class='va'>cgpa</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<p>min: Bir vektördeki minimum sayıyı bulan fonksiyon</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>min</a></span><span class='op'>(</span><span class='va'>df_iq</span><span class='op'>$</span><span class='va'>iq</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<p>İki sütunu toplayıp tek bir sütuna yazmak için aşağıdaki ifade
-yazılabilir.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_iq</span><span class='op'>$</span><span class='va'>toplam</span> <span class='op'>&lt;-</span> <span class='va'>df_iq</span><span class='op'>$</span><span class='va'>cgpa</span> <span class='op'>+</span> <span class='va'>df_iq</span><span class='op'>$</span><span class='va'>iq</span>
-</code></pre>
-</div>
-</div>
-<p>write.csv: Bir dataframe’i bir dosya olarak kaydetmek için
-kullanılacak fonksiyon</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/write.table.html'>write.csv</a></span><span class='op'>(</span><span class='va'>df_iq</span>, <span class='st'>"student_clustering_revised.csv"</span><span class='op'>)</span>
-</code></pre>
 </div>
 </div>
 <div class="sourceCode" id="cb1"><pre
