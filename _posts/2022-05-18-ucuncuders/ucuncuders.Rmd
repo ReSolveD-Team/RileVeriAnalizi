@@ -10,13 +10,13 @@ output:
     toc_depth: 5
 ---
 
-```{r}
+```{r include=FALSE}
 library(rmarkdown)
 ```
 
 # Vektörel İşlemler
 
-R işlem yaparken vektörel işlemlerde eleman seviyesinde işlem yapar. Bu temelde n'ninci elemanlar n'ninci elemanın işleme sokulmasıdır. Mesela aşağıdaki b vektörü ile c vektörü çapılırken b'nin 1. elemanı ile c'nin 1. elemanı, b'nin 2. elemanı ile c'nin 2. elemanı şeklinde çarpılarak ilerlenir.
+R işlem yaparken vektörel işlemlerde eleman seviyesinde işlem yapar. Bu temelde n'ninci elemanın n'ninci elemanla işleme sokulmasıdır. Mesela aşağıdaki b vektörü ile c vektörü çapılırken b'nin 1. elemanı ile c'nin 1. elemanı, b'nin 2. elemanı ile c'nin 2. elemanı şeklinde çarpılarak ilerlenir.
 
 ```{r}
 b <-  c(1, 4, 7, 77)
@@ -71,7 +71,7 @@ paged_table(ucuslar)
 
 # For döngüsü
 
-For döngüleri temelde elle tekrar tekrar yapma durumunda kaldığımız işlemleri otomatize etmemize yarıyor. Belirli bir sentaks takip edilen bu döngü iki temel kısımdan oluşuyor.
+For döngüleri elle tekrar tekrar yapma durumunda kaldığımız işlemleri otomatize etmemize yarıyor. Belirli bir sentaks takip edilerek oluşturulan bu döngü iki temel kısımdan oluşuyor.
 
 1.  kısımda üzerinde gezmek istediğimiz vektörü (ya da üzerinde gezmeye uygun veri) belirtiyoruz.
 2.  kısımda ise her adımda yapılacak işlemi belirtiyoruz.
@@ -83,7 +83,7 @@ median(ucuslar$dep_delay, na.rm = T)
 
 burada uçuşlar verisinin her sütunu için medyan değerini bulmak istediğimizde hem uzun sürecek hem verimsiz olacaktır. Değişiklik yapmak istediğimizde her adım için ayrıca bu değişiklikleri gerçekleştirmemiz de cabası. 
 
-Bunun için döngüleri kullanıyoruz. Aşağıda kodun yanına döngü için gerekli basamaklar yazılı: 
+Bunun için döngüleri kullanıyoruz. Aşağıda kodun yanında döngü için gerekli basamaklar yazılı: 
 
 ```{r}
 
@@ -91,9 +91,7 @@ Bunun için döngüleri kullanıyoruz. Aşağıda kodun yanına döngü için ge
 notlar <- c(90, 20, 70, 60)
 
 for (i in notlar) { # bu kısımda hangi veri üzerinde gezeceğimizi belirtiriyoruz
-  
   print(i**2) # bu kısımda da her adımda ne yapacağımızı belirtiyoruz.
-  
 }
 
 ```
@@ -101,14 +99,11 @@ for (i in notlar) { # bu kısımda hangi veri üzerinde gezeceğimizi belirtiriy
 Alıştırma: Notlar vektörü elemanlarının 7 ile bölümünden kalanları for döngüsü kullanarak hesaplayınız.
 
 ```{r}
-
 notlar <- c(90, 20, 70, 60)
 
 for (i in notlar) {
   print(i %% 7)
-  
 }
-
 ```
 
 Basit örnekten sonra biraz daha karmaşık bir örneğe daha bakacağız. Önce bir datafreame/tibble oluşturalım.
@@ -122,7 +117,6 @@ df <- tibble(
 )
 
 paged_table(df)
-
 ```
 
 DataFrame sütunlarına aşağıdaki gibi iki şekilde ulaşabiliriz. Sütun sırası ya da ismi kullanılarak. Bu döngüde birinci versiyonu kullanacağız.
@@ -143,15 +137,13 @@ df$d
 Tüm sütunların medyan değerlerini bulmak istediğimizi düşünelim.
 
 ```{r eval=FALSE}
-
 median(df[[1]])
 median(df[[2]])
 median(df[[3]])
 median(df[[4]])
-
 ```
 
-Tabii ki bu şekilde tek tek yazmak yerine bir döngü kurmak daha kolay. Bu örnekte her sütunun medyan değerlerini bulup bir vektöre kaydedeceğiz. Bunun için önce boş ya da daha hızlı olması açısından yazdıracağımız eleman sayısı uzunluğunda "0"lardan oluşan bir vectör oluşturacağız.
+Tabii ki bu şekilde tek tek yazmak yerine bir döngü kurmak daha kolay. Bu örnekte her sütunun medyan değerlerini bulup bir vektöre kaydedeceğiz. Bunun için önce boş ya da daha hızlı olması için yazdıracağımız eleman sayısı uzunluğunda "0"lardan oluşan bir vectör oluşturacağız.
 
 ```{r}
 output <- vector("double", ncol(df)) 
@@ -159,9 +151,9 @@ output <- vector("double", ncol(df))
 
 Vektör oluşturmanın bir çok şekli olmakla beraber ikinci kullanım döngüler için daha uygundur. Bu şekilde bir kullanımda dataframe'mizdeki sütun sayısından bağımsız bir şekilde döngü oluştururken daha hızlı bir döngü sistemi kurmuş oluyoruz.
 
-Kullandığımız `r vector()` fonksiyonu ilk argüman olarak tür ikinci argüman olarak da elaman sayısı almaktadır. Eleman sayısı yerine kullandığımız `ncol()` fonksiyonu dataframe'deki sütun sayısını vermektedir. Sonuçta oluşan vektör de "output" isimli bir vektöre kaydedilmektedir.
+Kullandığımız `vector()` fonksiyonu ilk argüman olarak tür ikinci argüman olarak da elaman sayısı almaktadır. Eleman sayısı yerine kullandığımız `ncol()` fonksiyonu dataframe'deki sütun sayısını vermektedir. Sonuçta oluşan vektör de "output" isimli bir vektöre kaydedilmektedir.
 
-Yukarıdaki fonksiyonun Türkçesini "Verimdeki sütun sayısı kadar sıfırlardan oluşan bir vektör oluştur. Bunu da 'output' isimli değişkene yazdır." olarak okuyabiliriz.
+Yukarıdaki kodun Türkçesini "Verimdeki sütun sayısı kadar sıfırlardan oluşan bir vektör oluştur. Bunu da 'output' isimli değişkene yazdır." olarak okuyabiliriz.
 
 ```{r}
 for (i in seq_along(df)) {        

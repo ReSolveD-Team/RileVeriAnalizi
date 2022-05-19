@@ -1505,18 +1505,12 @@ Alıştırmaları</a></li>
 </ul>
 </nav>
 </div>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/rstudio/rmarkdown'>rmarkdown</a></span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
 <h1 id="vektörel-işlemler">Vektörel İşlemler</h1>
 <p>R işlem yaparken vektörel işlemlerde eleman seviyesinde işlem yapar.
-Bu temelde n’ninci elemanlar n’ninci elemanın işleme sokulmasıdır.
-Mesela aşağıdaki b vektörü ile c vektörü çapılırken b’nin 1. elemanı ile
-c’nin 1. elemanı, b’nin 2. elemanı ile c’nin 2. elemanı şeklinde
-çarpılarak ilerlenir.</p>
+Bu temelde n’ninci elemanın n’ninci elemanla işleme sokulmasıdır. Mesela
+aşağıdaki b vektörü ile c vektörü çapılırken b’nin 1. elemanı ile c’nin
+1. elemanı, b’nin 2. elemanı ile c’nin 2. elemanı şeklinde çarpılarak
+ilerlenir.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>b</span> <span class='op'>&lt;-</span>  <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>4</span>, <span class='fl'>7</span>, <span class='fl'>77</span><span class='op'>)</span>
@@ -1591,9 +1585,9 @@ paketleri yükleyebilirsiniz</p>
 </div>
 </div>
 <h1 id="for-döngüsü">For döngüsü</h1>
-<p>For döngüleri temelde elle tekrar tekrar yapma durumunda kaldığımız
-işlemleri otomatize etmemize yarıyor. Belirli bir sentaks takip edilen
-bu döngü iki temel kısımdan oluşuyor.</p>
+<p>For döngüleri elle tekrar tekrar yapma durumunda kaldığımız işlemleri
+otomatize etmemize yarıyor. Belirli bir sentaks takip edilerek
+oluşturulan bu döngü iki temel kısımdan oluşuyor.</p>
 <ol type="1">
 <li>kısımda üzerinde gezmek istediğimiz vektörü (ya da üzerinde gezmeye
 uygun veri) belirtiyoruz.</li>
@@ -1615,7 +1609,7 @@ uygun veri) belirtiyoruz.</li>
 istediğimizde hem uzun sürecek hem verimsiz olacaktır. Değişiklik yapmak
 istediğimizde her adım için ayrıca bu değişiklikleri gerçekleştirmemiz
 de cabası.</p>
-<p>Bunun için döngüleri kullanıyoruz. Aşağıda kodun yanına döngü için
+<p>Bunun için döngüleri kullanıyoruz. Aşağıda kodun yanında döngü için
 gerekli basamaklar yazılı:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -1623,9 +1617,7 @@ gerekli basamaklar yazılı:</p>
 <span class='va'>notlar</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>90</span>, <span class='fl'>20</span>, <span class='fl'>70</span>, <span class='fl'>60</span><span class='op'>)</span>
 
 <span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='va'>notlar</span><span class='op'>)</span> <span class='op'>{</span> <span class='co'># bu kısımda hangi veri üzerinde gezeceğimizi belirtiriyoruz</span>
-  
   <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>i</span><span class='op'>**</span><span class='fl'>2</span><span class='op'>)</span> <span class='co'># bu kısımda da her adımda ne yapacağımızı belirtiyoruz.</span>
-  
 <span class='op'>}</span>
 </code></pre>
 </div>
@@ -1642,7 +1634,6 @@ for döngüsü kullanarak hesaplayınız.</p>
 
 <span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='va'>notlar</span><span class='op'>)</span> <span class='op'>{</span>
   <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>i</span> <span class='op'><a href='https://rdrr.io/r/base/Arithmetic.html'>%%</a></span> <span class='fl'>7</span><span class='op'>)</span>
-  
 <span class='op'>}</span>
 </code></pre>
 </div>
@@ -1667,7 +1658,7 @@ for döngüsü kullanarak hesaplayınız.</p>
 </div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["a"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["b"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["c"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["d"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"-0.93881356","2":"0.02276084","3":"-0.54790133","4":"1.6515466"},{"1":"0.26918229","2":"0.77073770","3":"0.17680130","4":"-0.2895191"},{"1":"-0.33182833","2":"-0.94823872","3":"1.89314032","4":"0.5663128"},{"1":"0.92700577","2":"2.20065777","3":"-0.44967769","4":"-0.2885045"},{"1":"-0.39296468","2":"-0.29426621","3":"-0.06562369","4":"2.0150829"},{"1":"-0.43961256","2":"0.10067110","3":"0.39012384","4":"0.9200116"},{"1":"1.01169661","2":"0.62608509","3":"0.85766873","4":"0.2767004"},{"1":"0.56652161","2":"-0.14728711","3":"0.43327735","4":"-0.8145376"},{"1":"0.08586673","2":"0.85071812","3":"0.79980713","4":"0.7707650"},{"1":"0.82156322","2":"1.62370926","3":"-1.12917695","4":"0.4452709"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["a"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["b"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["c"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["d"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"-0.3671475","2":"1.7659672","3":"1.37099331","4":"-0.43408966"},{"1":"0.8374141","2":"-0.4775262","3":"-0.08757320","4":"1.57382657"},{"1":"1.2697009","2":"-0.1856181","3":"0.83694020","4":"-0.66385573"},{"1":"0.7109740","2":"-0.4107810","3":"-0.75538633","4":"0.03524708"},{"1":"0.3406644","2":"0.1204018","3":"0.06793766","4":"-0.65286552"},{"1":"-0.9375417","2":"0.2806429","3":"1.28160841","4":"-0.75783868"},{"1":"-1.5918657","2":"-0.1688265","3":"-1.36999289","4":"-2.00609618"},{"1":"-0.6868184","2":"0.5304817","3":"0.71018876","4":"0.86961090"},{"1":"2.2158615","2":"-1.5960393","3":"0.11426027","4":"-0.55921758"},{"1":"-2.3030065","2":"-1.1931838","3":"-0.09065067","4":"-1.76124937"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -1701,7 +1692,7 @@ kullanacağız.</p>
 </div>
 <p>Tabii ki bu şekilde tek tek yazmak yerine bir döngü kurmak daha
 kolay. Bu örnekte her sütunun medyan değerlerini bulup bir vektöre
-kaydedeceğiz. Bunun için önce boş ya da daha hızlı olması açısından
+kaydedeceğiz. Bunun için önce boş ya da daha hızlı olması için
 yazdıracağımız eleman sayısı uzunluğunda “0”lardan oluşan bir vectör
 oluşturacağız.</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -1714,14 +1705,14 @@ oluşturacağız.</p>
 döngüler için daha uygundur. Bu şekilde bir kullanımda dataframe’mizdeki
 sütun sayısından bağımsız bir şekilde döngü oluştururken daha hızlı bir
 döngü sistemi kurmuş oluyoruz.</p>
-<p>Kullandığımız fonksiyonu ilk argüman olarak tür ikinci argüman olarak
-da elaman sayısı almaktadır. Eleman sayısı yerine kullandığımız
-<code>ncol()</code> fonksiyonu dataframe’deki sütun sayısını
-vermektedir. Sonuçta oluşan vektör de “output” isimli bir vektöre
-kaydedilmektedir.</p>
-<p>Yukarıdaki fonksiyonun Türkçesini “Verimdeki sütun sayısı kadar
-sıfırlardan oluşan bir vektör oluştur. Bunu da ‘output’ isimli değişkene
-yazdır.” olarak okuyabiliriz.</p>
+<p>Kullandığımız <code>vector()</code> fonksiyonu ilk argüman olarak tür
+ikinci argüman olarak da elaman sayısı almaktadır. Eleman sayısı yerine
+kullandığımız <code>ncol()</code> fonksiyonu dataframe’deki sütun
+sayısını vermektedir. Sonuçta oluşan vektör de “output” isimli bir
+vektöre kaydedilmektedir.</p>
+<p>Yukarıdaki kodun Türkçesini “Verimdeki sütun sayısı kadar sıfırlardan
+oluşan bir vektör oluştur. Bunu da ‘output’ isimli değişkene yazdır.”
+olarak okuyabiliriz.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_along</a></span><span class='op'>(</span><span class='va'>df</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>        
@@ -1752,7 +1743,7 @@ karşılık gelen sırasına yazılıyor. sonuç aşağıdaki gibi oluşuyor.</p
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>output</span>
 </code></pre>
 </div>
-<pre><code>[1] 0.1775245 0.3633781 0.2834626 0.5057919</code></pre>
+<pre><code>[1] -0.01324154 -0.17722229  0.09109897 -0.60604155</code></pre>
 </div>
 <h1 id="while-döngüsü">While döngüsü</h1>
 <p>While döngüsü for döngüsü ile çok benzer olmakla beraber ana fark 1.
